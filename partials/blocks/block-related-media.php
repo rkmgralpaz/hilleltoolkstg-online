@@ -59,7 +59,7 @@
             <div class="block-related-media__cta" data-animate="fade-in-up">
                 <?php
                 echo get_button(array(
-                    'html_text' => 'Explore Our Media Library',
+                    'html_text' => 'Explore our library test',
                     'href'      => home_url('/medialibrary/'),
                     'target'    => '_self',
                     'class'     => 'btn--primary btn--large btn--icon-after',
