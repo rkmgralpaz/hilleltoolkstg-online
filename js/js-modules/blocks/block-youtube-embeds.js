@@ -162,23 +162,31 @@ class InlineCardPlayer {
         if (!activePlayers.includes(this)) activePlayers.push(this);
         resetAllExcept(this);
 
+        // Add loading state (shows spinner, keeps cover visible)
+        this.wrapper.classList.add('loading');
+
         // Keep the loop video as overlay while the real player loads underneath
         const loopVideo = this.wrapper.querySelector('.video-preview-loop');
         if (loopVideo) {
             loopVideo.classList.add('video-preview-overlay');
             this._loopOverlay = loopVideo;
-
-            // Safety fallback: remove overlay after 3s if not already removed
-            this._overlayTimeout = setTimeout(() => {
-                this.removeLoopOverlay();
-            }, 3000);
         }
 
-        // Remove play button and poster image immediately
+        // Keep poster image visible during loading
+        const posterImg = this.wrapper.querySelector('.video-poster-img');
+        if (posterImg) {
+            posterImg.classList.add('video-preview-overlay');
+            this._posterOverlay = posterImg;
+        }
+
+        // Safety fallback: remove loading and overlay after 3s if not already removed
+        this._overlayTimeout = setTimeout(() => {
+            this.removeLoadingAndOverlay();
+        }, 3000);
+
+        // Remove only the play button (keep poster/loop visible with loading spinner)
         const playBtn = this.wrapper.querySelector('.yt-embed-play-btn');
         if (playBtn) playBtn.remove();
-        const posterImg = this.wrapper.querySelector('.video-poster-img');
-        if (posterImg) posterImg.remove();
 
         const holderId = `video-holder-${this.uid}`;
         const posterId = `video-poster-${this.uid}`;
@@ -380,16 +388,31 @@ class InlineCardPlayer {
         this.attachControlEvents();
     }
 
-    // Remove the loop overlay once the real video is playing
-    removeLoopOverlay() {
+    // Remove the loading state and overlays once the real video is ready
+    removeLoadingAndOverlay() {
         if (this._overlayTimeout) {
             clearTimeout(this._overlayTimeout);
             this._overlayTimeout = null;
         }
+        // Remove loading state
+        this.wrapper.classList.remove('loading');
+
+        // Remove loop overlay
         if (this._loopOverlay) {
             this._loopOverlay.remove();
             this._loopOverlay = null;
         }
+
+        // Remove poster overlay
+        if (this._posterOverlay) {
+            this._posterOverlay.remove();
+            this._posterOverlay = null;
+        }
+    }
+
+    // Backwards compatibility alias
+    removeLoopOverlay() {
+        this.removeLoadingAndOverlay();
     }
 
     // ============================================

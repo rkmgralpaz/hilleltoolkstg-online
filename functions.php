@@ -4,7 +4,7 @@ $GLOBALS['wp_post_id'] = get_the_ID();
 
 function num_version()
 {
-    return '1.0.382';
+    return '1.0.386';
 }
 
 //---------------------------------//
@@ -1244,7 +1244,7 @@ function my_scripts()
          wp_enqueue_script('jquery');
     }
     */
-    wp_register_script('main-script', get_template_directory_uri() . '/js/main.js', false, num_version(), false);
+    wp_register_script('main-script', get_template_directory_uri() . '/js/main.min.js', false, num_version(), false);
     wp_enqueue_script('main-script');
 
     // wp_register_script('cookieyes-script', 'https://cdn-cookieyes.com/client_data/fa68b8da34be4e431c6d3125/script.js', false, num_version(), false);

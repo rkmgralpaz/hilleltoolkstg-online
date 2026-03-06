@@ -1,5 +1,5 @@
-import { CookieManager } from "./js-modules/utils.js?v=032";
-import { safeURL, preloadImages, startGlobals } from "./js-modules/globals.js?v=032";
+import { CookieManager } from "./js-modules/utils.js";
+import { safeURL, preloadImages, startGlobals } from "./js-modules/globals.js";
 
 const doc = document;
 const win = window;

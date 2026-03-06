@@ -50,6 +50,29 @@
         background-image: none;
     }
 
+    // --- Loading state (after click, before player ready) ---
+    &.loading {
+        cursor: default;
+
+        // Dots overlay on top of everything
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 20;
+            background: rgba(0, 0, 0, 0.35);
+            background-image: url(assets/preloader-dots.svg);
+            background-repeat: no-repeat;
+            background-size: 30px 30px;
+            background-position: center;
+        }
+
+        .yt-embed-play-btn {
+            opacity: 0;
+            pointer-events: none;
+        }
+    }
+
     // --- Hide content until loaded ---
     .video-preview-loop,
     .video-poster-img,
@@ -84,6 +107,13 @@
         height: 100%;
         object-fit: cover;
         display: block;
+
+        // Stays on top while the real player loads underneath (like loop video)
+        &.video-preview-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 15;
+        }
     }
 
     // --- Play button overlay (before activation) ---
@@ -206,7 +236,7 @@
         position: absolute;
         left: 0;
         top: 80px;
-        font-size: 28px;
+        font-size: 16px;
         color: white;
         font-weight: 900;
         width: 100%;
