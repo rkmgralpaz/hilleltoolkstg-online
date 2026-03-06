@@ -90,6 +90,7 @@ class InlineCardPlayer {
         this.volume = 1;
         this.updateInterval = null;
         this.playerReady = false;
+        this._shouldAutoplayOnReady = false;
 
         this.elements = {};
 
@@ -154,6 +155,9 @@ class InlineCardPlayer {
     async activatePlayer() {
         if (this.playerReady) return;
 
+        // Flag to autoplay when ready (user clicked, so it's allowed)
+        this._shouldAutoplayOnReady = true;
+
         // Register in global list and reset all others back to cover
         if (!activePlayers.includes(this)) activePlayers.push(this);
         resetAllExcept(this);
@@ -163,6 +167,11 @@ class InlineCardPlayer {
         if (loopVideo) {
             loopVideo.classList.add('video-preview-overlay');
             this._loopOverlay = loopVideo;
+
+            // Safety fallback: remove overlay after 3s if not already removed
+            this._overlayTimeout = setTimeout(() => {
+                this.removeLoopOverlay();
+            }, 3000);
         }
 
         // Remove play button and poster image immediately
@@ -260,6 +269,12 @@ class InlineCardPlayer {
                         this.isMuted = isIOS;
                         this.updateMuteIcon();
 
+                        // Remove loop overlay immediately when player is ready (mobile fix)
+                        this.removeLoopOverlay();
+
+                        // Show video holder immediately (mobile fix - don't wait for playback)
+                        this.elements.holder.style.opacity = 1;
+
                         // Captions setup — ON by default, OFF only if user disabled
                         if (this.subs.length) {
                             this.elements.subsBtn.classList.add('show');
@@ -276,6 +291,14 @@ class InlineCardPlayer {
                             setTimeout(() => this.elements.muteBtn.click(), 150);
                         }
 
+                        // Autoplay if user clicked (mobile fix - trigger play immediately)
+                        if (this._shouldAutoplayOnReady) {
+                            this._shouldAutoplayOnReady = false;
+                            setTimeout(() => {
+                                this.player.playVideo();
+                            }, 100);
+                        }
+
                         this.startUpdateLoop();
                     },
                     onStateChange: (e) => {
@@ -284,7 +307,6 @@ class InlineCardPlayer {
                         if (this.isPlaying) {
                             this.removeLoopOverlay();
                             this.startUpdateLoop();
-                            this.elements.holder.style.opacity = 1;
                         } else {
                             this.stopUpdateLoop();
                         }
@@ -315,17 +337,28 @@ class InlineCardPlayer {
             this.player = this.elements.holder.querySelector('video');
             this.playerReady = true;
 
+            // Remove loop overlay immediately when player is ready (mobile fix)
+            this.removeLoopOverlay();
+
+            // Show video holder immediately (mobile fix)
+            this.elements.holder.style.opacity = 1;
+
             this.elements.holder.onclick = () => this.elements.playPauseBtn.click();
 
             this.player.addEventListener('loadedmetadata', () => {
                 this.duration = this.player.duration;
+
+                // Autoplay if user clicked (mobile fix - trigger play immediately)
+                if (this._shouldAutoplayOnReady) {
+                    this._shouldAutoplayOnReady = false;
+                    this.player.play().catch(() => {});
+                }
             });
             this.player.addEventListener('play', () => {
                 this.isPlaying = true;
                 this.removeLoopOverlay();
                 this.updatePlayPauseButton();
                 this.startUpdateLoop();
-                this.elements.holder.style.opacity = 1;
             });
             this.player.addEventListener('pause', () => {
                 this.isPlaying = false;
@@ -349,6 +382,10 @@ class InlineCardPlayer {
 
     // Remove the loop overlay once the real video is playing
     removeLoopOverlay() {
+        if (this._overlayTimeout) {
+            clearTimeout(this._overlayTimeout);
+            this._overlayTimeout = null;
+        }
         if (this._loopOverlay) {
             this._loopOverlay.remove();
             this._loopOverlay = null;
