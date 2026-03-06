@@ -1,0 +1,224 @@
+.block-rcards {
+
+	.block-rcards-scroll-arrows {
+		&.bg-transparent, &.bg-neutral-200 {
+			.btn {
+				&:disabled{
+					opacity: 0.5;
+				}
+				background-color: var(--neutral-100);
+				.btn__icon svg path {
+					fill: var(--neutral-900);
+				}
+			}
+		}
+		&.bg-neutral-100 {
+			.btn {
+				&:disabled{
+					opacity: 0.5;
+				}
+				background-color: var(--neutral-200);
+				.btn__icon svg path {
+					fill: var(--neutral-900);
+				}
+			}
+		}
+	}
+
+	.block-rcards--grid {
+		padding: var(--Margins-margin-top-bottom-sm) var(--Margins-margin-left-right);
+
+		.rcards {
+			gap: var(--Gap-between-cards);
+			display: grid;
+
+			@media (min-width: #{$min-width-md}) {
+				grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+			}
+			
+			@media (min-width: #{$min-width-lg}) {
+				grid-template-columns: repeat(auto-fill, minmax(431px, 1fr));
+			}
+
+			@media (min-width: #{$min-width-xl}) {
+				grid-template-columns: 1fr 1fr 1fr ;
+			}
+		}
+	}
+
+	.block-rcards-scroll-arrows {
+		width: 100%;
+		display: none;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 6px;
+		padding: var(--Margins-margin-top-bottom-sm);
+		padding-bottom: 0;
+		background-color: transparent;
+		button{
+			display: none;
+			&:disabled{
+				cursor: default;
+			}
+		}
+		&.active {
+			display: flex;
+		}
+		&.visible {
+			padding-bottom: var(--core-sizes-size-xxs);
+			@media (width < 1024px) {
+				padding-bottom: 0;
+			}
+			.btn {
+				display: inherit;
+				@media (width < 1024px) {
+					display: none;
+				}
+			}	
+		}
+	}
+
+	.block-rcards--row {
+		padding: var(--Margins-margin-top-bottom-sm) 0;
+		padding-top: 0;
+		overflow-x: hidden;
+
+		.rcards {
+			display: flex;
+			align-items: stretch;
+			gap: var(--Gap-between-cards);
+			overflow-x: scroll;
+			overflow-y: hidden;
+			// scroll-behavior: smooth;
+
+			scrollbar-width: none;
+			&::-webkit-scrollbar {
+				display: none;
+			}
+
+			padding-left: var(--Margins-margin-left-right);
+			padding-right: var(--Margins-margin-left-right);
+
+			&.rcards-few {
+				.rcards__box {
+					@media screen and (min-width: #{$min-width-xl}) {
+						flex: 1 0 auto;
+					}
+				}
+			}
+
+		}
+		.rcards__box {
+			flex: 0 0 auto;
+			width: 324px;
+			@media screen and (min-width: #{$min-width-md}) {
+				width: 460px;
+			}
+			@media screen and (min-width: #{$min-width-lg}) {
+				width: 500px;
+			}
+			@media screen and (min-width: #{$min-width-xl}) {
+				// width: 544px;
+			}
+		}
+	}
+
+	.rcards__box {
+		display: flex;
+		padding: var(--Padding-medium-container);
+		flex-direction: column;
+		justify-content: space-between;
+		border-radius: var(--Corner-Radius-radius-cards);
+		
+		gap: var(--Gap-between-elements-sm);
+
+		min-height: 386px;
+
+		@media (min-width: #{$min-width-md}) {
+			min-height: 508px;
+		}
+		
+		@media (min-width: #{$min-width-lg}) {
+			min-height: 520px;
+		}
+
+		@media (min-width: #{$min-width-xl}) {
+			min-height: 544px;
+		}
+
+		&.rcards__box--only-tagline {
+			.rcards__box-top {
+				display: flex;
+				flex-direction: column;
+				gap: var(--Gap-between-elements-sm);
+			}
+		}
+
+		&.rcards__box--only-icons {
+			gap: var(--Gap-default-md);
+			.rcards__box-top {
+				display: flex;
+				flex-direction: column;
+				gap: var(--Gap-default-md);
+			}
+		}
+
+		&.rcards__box--only-title {
+			.rcards__box-top {
+				display: flex;
+				flex-direction: column;
+				gap: var(--Gap-between-elements-sm);
+			}
+		}
+	}
+
+	.rcards__box-top {
+		& > div:first-child {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+	.rcards__box-icon {
+		display: flex;
+		width: var(--size-size-circle);
+		height: var(--size-size-circle);
+		padding: 2px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		background: var(--surface-secondary);
+		color: var(--border);
+		svg {
+			width: var(--size-size-icon-md);
+			height: var(--size-size-icon-md);
+			path {
+				stroke: var(--border);
+			}
+		}
+	}
+	.rcards__box-bottom {
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+	}
+	.rcards__box-text  {
+		p {
+			margin-top: 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		a {
+			text-decoration: underline;
+			text-underline-offset: var(--text-underline-offset);
+			text-decoration-thickness: 1.5px;
+			padding-left: 4px;
+			padding-right: 4px;
+		}
+		strong {
+			font-weight: 600;
+		}
+
+	}	
+
+}

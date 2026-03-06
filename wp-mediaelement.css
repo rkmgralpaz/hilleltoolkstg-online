@@ -1,0 +1,8 @@
+.mejs-container, .mejs-container .mejs-controls, .mejs-embed, .mejs-embed body {
+    border-radius: 14px;
+    background: #003B5C !important;
+  }
+  
+  .wp-audio-shortcode {
+    margin-bottom: 10px;
+  }

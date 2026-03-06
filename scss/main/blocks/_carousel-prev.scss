@@ -1,0 +1,38 @@
+.carousel__main-wrapper {
+
+	&.carousel__main-wrapper--transition-prev {
+
+		.carousel__image-wrapper-1 {
+			transform: translateX(0)  scale(0.7);
+		}
+	
+		.carousel__image-wrapper-2 {
+			transform: translateX(50vw)  scale(1);
+			.carousel__image-holder { 
+				right: auto;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	
+		.carousel__image-wrapper-3 {
+			transform: translateX(100vw)  scale(0.7);
+			.carousel__image-holder { 
+				left: -200px;
+				transform: translate(0, -50%);
+			}
+
+		}
+	
+		.carousel__image-wrapper-4 {
+			transform: translateX(150vw)  scale(0.7);
+		}
+	
+		.carousel__image-wrapper-5 {
+			transform: translateX(200vw)  scale(0.7);
+		}
+
+	}
+
+}
+	  

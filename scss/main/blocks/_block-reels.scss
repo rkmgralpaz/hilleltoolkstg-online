@@ -1,0 +1,89 @@
+.block-reels {
+    padding: var(--Margins-margin-top-bottom-sm, 40px) var(--Margins-margin-left-right, 40px);
+    overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    width: 100%;
+}
+.block-reels__items-wrapper{
+    width: fit-content;
+    min-width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--Gap-default-lg, 32px);
+}
+.block-reels__item{
+    width: 302px;
+}
+.block-reels__item-embed-wrapper{
+    width: 100%;
+    aspect-ratio: 302/535;
+    overflow: hidden;
+    border-radius: var(--Gap-default-xs, 16px);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+    background-image: url(assets/preloader-dots.svg);
+    &.loaded{
+        background-image: none;
+        iframe{
+            transition: opacity 0.5s 0.5s;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    iframe{
+        background-color: white;
+        width: 100%;
+        height: 100%;
+        visibility: hidden;
+        opacity: 0;
+    }
+    &.instagram{
+        iframe{
+            //transform: scale(1.425) translateY(4.8%);
+            transform: scale(1.43) translateY(4.5%);
+        }
+    }
+}
+.block-reels__item{
+    &.type-image{
+        width: 452px;
+        .block-reels__item-embed-wrapper{
+            aspect-ratio: 0.845;
+            &.instagram{
+                iframe{
+                    transform: scale(1) translateY(-9.15%);
+                    height: 590px;
+                }
+            }
+        }
+    }
+}
+.block-reels__item-data{
+    padding-top: var(--Gap-default-xs, 16px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--Gap-default-xs, 16px);
+    .item-data__header{
+        display: flex;
+        gap: var(--Gap-default-xs, 16px);
+    }
+    .item-data__header-txt{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1em;
+    }
+    .item-data__image{
+        width: var(--size-size-avatars-lg, 64px);
+        aspect-ratio: 1;
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 100%;
+    }
+}

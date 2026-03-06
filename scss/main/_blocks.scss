@@ -1,0 +1,107 @@
+@import 'blocks/block-testimonial';
+@import 'blocks/block-text-buttons';
+@import 'blocks/block-heading';
+@import 'blocks/block-hero';
+@import 'blocks/block-accordion';
+@import 'blocks/block-slideshow-wimages';
+@import 'blocks/block-cards';
+@import 'blocks/block-rcards';
+@import 'blocks/block-text-only-carrosuel';
+@import 'blocks/block-landing';
+@import 'blocks/block-video';
+@import 'blocks/block-repeater-text';
+@import 'blocks/block-repeater-list';
+@import 'blocks/block-text-wphoto';
+@import 'blocks/block-multi-photo';
+@import 'blocks/block-multi-photo-hero';
+@import 'blocks/block-multi-photo-extended';
+@import 'blocks/block-quiz';
+@import 'blocks/block-outcome-quiz';
+@import 'blocks/block-cta-banner-h';
+@import 'blocks/block-cta-misinformation-cards';
+@import 'blocks/block-cta-banner-v';
+@import 'blocks/block-repeater-wicons';
+@import 'blocks/block-home-animation';
+@import 'blocks/block-reels';
+@import 'blocks/block-youtube-embeds';
+@import 'blocks/block-stats';
+@import 'blocks/block-datawrapper-1';
+@import 'blocks/block-datawrapper-2';
+@import 'blocks/block-embed-code';
+@import 'blocks/block-image-carousel';
+@import 'blocks/block-tiles';
+@import 'blocks/block-incidents-by-type';
+@import 'blocks/block-additional-stats';
+@import 'blocks/block-overview';
+@import 'blocks/block-other-stats';
+@import 'blocks/block-data-interactive-main-graphs';
+@import 'blocks/block-related-media';
+@import 'blocks/block-related-media-horizontal';
+@import 'blocks/block-context';
+
+
+.main-content {
+	&>div:first-child.theme:not(.theme-block-repeater-text) {
+		&:first-child {
+			padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height));
+		}
+	}
+	&>div:first-child.block-multi-photo,
+	&>div:first-child.block-hero,
+	&>div:first-child.block-repeater-list-container,
+	&>div:first-child.block-repeater-text-container,
+	&>div:first-child.block-stats-wrap,
+	&>div:first-child.block-datawrapper-1-wrap,
+	&>div:first-child.block-datawrapper-2-wrap,
+	&>div:first-child.block-image-carousel {
+		&:first-child {
+			padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height) + var(--Margins-margins-elevated)) !important;
+		}
+	}
+
+	&>div:first-child.block-text-only-carrousel {
+		&:first-child {
+			padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height) + var(--Margins-margins-elevated)) !important;
+		}
+	}
+
+	&>div:first-child.block-rcards {
+		&:first-child {
+			padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height) + var(--Margins-margins-elevated)) !important;
+		}
+	}
+
+	&>div:first-child.block-quiz {
+		&:first-child {
+			padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height) + var(--Margins-margins-elevated)) !important;
+		}
+	}
+
+	&>div:first-child.block-bannerh {
+		&:first-child {
+			padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height) + var(--Margins-margins-elevated)) !important;
+		}
+	}
+
+	&>div:first-child.block-bannerv {
+		&:first-child {
+			padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height) + var(--Margins-margins-elevated)) !important;
+
+			.block-bannerv__container {
+				padding-top: 0;
+
+				@media (width < 1024px) {
+					padding-top: var(--Margins-margin-left-right) !important;
+				}
+			}
+		}
+	}
+
+	&>div:first-child.theme.page-header__tabs {
+		padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height) + 40px) !important;
+	}
+
+	&>div:first-of-type.block-data-interactive-main-graphs {
+		padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height)) !important;
+	}
+}

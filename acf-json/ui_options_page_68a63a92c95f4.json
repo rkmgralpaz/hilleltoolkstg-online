@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_68a63a92c95f4",
+    "title": "Data Interactive Sources Page",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Data Interactive Sources Page",
+    "menu_slug": "sources",
+    "parent_slug": "edit.php?post_type=data_interactive",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "",
+    "position": 1,
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update",
+    "updated_message": "Page Updated",
+    "capability": "edit_posts",
+    "data_storage": "post_id",
+    "post_id": "data_interactive",
+    "autoload": 0,
+    "modified": 1756995051
+}

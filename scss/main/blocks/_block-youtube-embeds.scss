@@ -1,0 +1,346 @@
+// ============================================
+// BLOCK: YouTube Embeds
+// Layout: same as block-reels
+// Player: ported from ADL Monitor _single-ny-overlay.scss
+// ============================================
+
+// --- Block container ---
+.block-youtube-embeds {
+    padding: var(--Margins-margin-top-bottom-sm, 40px) var(--Margins-margin-left-right, 40px);
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    width: 100%;
+    &::-webkit-scrollbar { display: none; }
+}
+
+// --- Items wrapper (horizontal scroll, centered) ---
+.block-youtube-embeds__items-wrapper {
+    width: fit-content;
+    min-width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: var(--Gap-default-lg, 32px);
+}
+
+// --- Individual card ---
+.block-youtube-embeds__item {
+    width: 302px;
+}
+
+// ============================================
+// VIDEO WRAPPER (the 9:16 card area)
+// ============================================
+.block-youtube-embeds__item-video-wrapper {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border-radius: var(--Gap-default-xs, 16px);
+    background-color: white;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: center;
+    background-image: url(assets/preloader-dots.svg);
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+
+    &.loaded {
+        background-image: none;
+    }
+
+    // --- Hide content until loaded ---
+    .video-preview-loop,
+    .video-poster-img,
+    .yt-embed-play-btn {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+    &.loaded .video-preview-loop,
+    &.loaded .video-poster-img,
+    &.loaded .yt-embed-play-btn {
+        opacity: 1;
+    }
+
+    // --- Preview loop video (MP4 thumb) ---
+    .video-preview-loop {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+
+        // Stays on top while the real player loads underneath
+        &.video-preview-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 15;
+        }
+    }
+
+    // --- Poster image ---
+    .video-poster-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    // --- Play button overlay (before activation) ---
+    .yt-embed-play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.55);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s, transform 0.2s;
+        padding: 0;
+        svg {
+            width: 28px;
+            height: 28px;
+            fill: #fff;
+            margin-left: 3px;
+        }
+        &:hover {
+            background: rgba(0, 0, 0, 0.75);
+            transform: translate(-50%, -50%) scale(1.08);
+        }
+    }
+
+    // ============================================
+    // ADL Monitor Player Styles (ported)
+    // ============================================
+    .video-player-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        background: #000;
+        border-radius: 0;
+        overflow: hidden;
+        user-select: none;
+    }
+
+    .video-poster {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .video-holder {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0;
+        transition: opacity 0.3s 0.1s;
+        z-index: 1;
+    }
+
+    .video-holder iframe,
+    .video-holder video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .video-holder iframe {
+        pointer-events: none;
+    }
+
+    // --- Custom Controls ---
+    .video-controls {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(rgba(82,82,82,0), rgba(82,82,82,0.31));
+        padding: 12px;
+        padding-bottom: 18px;
+        opacity: 1;
+        transition: opacity 0.3s;
+        pointer-events: none;
+        z-index: 10;
+    }
+
+    .video-player-wrapper:hover .video-controls,
+    .video-controls.show {
+        opacity: 1;
+    }
+
+    .progress-bar {
+        width: 100%;
+        height: 6px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 0;
+        cursor: pointer;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        pointer-events: all;
+    }
+
+    .progress-bar-fill {
+        height: 100%;
+        background: var(--blue-600, #3B82F6);
+        border-radius: 0;
+        width: 0%;
+    }
+
+    // --- Subtitles ---
+    .video-subs {
+        position: absolute;
+        left: 0;
+        top: 80px;
+        font-size: 28px;
+        color: white;
+        font-weight: 900;
+        width: 100%;
+        padding: 10px;
+        user-select: none;
+        text-align: center;
+        text-shadow:
+            -1px -1px 1px #000,
+             1px -1px 1px #000,
+            -1px  1px 1px #000,
+             1px  1px 1px #000;
+        font-family: sans-serif;
+        pointer-events: none;
+        z-index: 8;
+    }
+
+    // --- Controls layout ---
+    .controls-row {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 12px;
+        pointer-events: none;
+    }
+
+    .controls-col {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 12px;
+        pointer-events: all;
+    }
+
+    // --- Captions button ---
+    .captions-btn {
+        svg path {
+            stroke: none !important;
+            fill: white;
+        }
+        display: none;
+        &.show {
+            display: inherit;
+        }
+    }
+
+    // --- Mute button offset ---
+    .mute-btn {
+        --icon-offset-x: 2px;
+    }
+
+    // --- Time display ---
+    .time-display {
+        color: white;
+        font-size: 12px;
+        min-width: 80px;
+        display: none;
+    }
+
+    // --- Volume ---
+    .volume-control {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .volume-slider {
+        width: 60px;
+        display: none;
+    }
+
+    // --- Control buttons (frosted glass, adapted for 302px card) ---
+    .control-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        display: inline-flex;
+
+        .btn__holder {
+            display: inline-flex;
+            width: 36px;
+            height: 36px;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            background-color: rgba(82, 82, 82, 0.30);
+            backdrop-filter: blur(74px);
+            transition: 0.3s ease;
+        }
+
+        .btn__icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transform: translateX(var(--icon-offset-x, 0)) translateY(var(--icon-offset-y, 0));
+
+            svg {
+                width: 20px;
+                height: 20px;
+                aspect-ratio: 1/1;
+            }
+        }
+    }
+}
+
+// ============================================
+// USER INFO (identical to block-reels)
+// ============================================
+.block-youtube-embeds__item-data {
+    padding-top: var(--Gap-default-xs, 16px);
+    display: flex;
+    flex-direction: column;
+    gap: var(--Gap-default-xs, 16px);
+
+    .item-data__header {
+        display: flex;
+        gap: var(--Gap-default-xs, 16px);
+    }
+
+    .item-data__header-txt {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1em;
+    }
+
+    .item-data__image {
+        width: var(--size-size-avatars-lg, 64px);
+        aspect-ratio: 1;
+        background-color: white;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: 100%;
+    }
+}

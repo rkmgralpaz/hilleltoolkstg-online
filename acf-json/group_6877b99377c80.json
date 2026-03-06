@@ -1,0 +1,56 @@
+{
+    "key": "group_6877b99377c80",
+    "title": "Misinformation Filters",
+    "fields": [
+        {
+            "key": "field_6877b99306205",
+            "label": "Color",
+            "name": "color",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "list-of-colors",
+                "id": ""
+            },
+            "choices": {
+                "light-pink--1;#FFD3FF": "Light Pink",
+                "dark-green--2;#227157": "Dark Green",
+                "bright-blue--3;#729AFD": "Bright Blue",
+                "dark-pink--4;#332933": "Dark Pink"
+            },
+            "default_value": "light-pink--1;#FFD3FF",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "card_filters"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "seamless",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1756995051
+}

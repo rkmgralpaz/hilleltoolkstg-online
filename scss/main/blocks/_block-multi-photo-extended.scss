@@ -1,0 +1,232 @@
+// block-multi-photo-extended
+// Desktop: layout scattered absoluto (Figma frame 1728×1347)
+// Mobile: 4 imágenes arriba → texto full-width → 3 imágenes abajo
+
+// ── BLOQUE BASE ───────────────────────────────────────────────────────────────
+
+.block-multi-photo-extended {
+	--img-radius: var(--Gap-default-3xs, 8px);
+	// Spread: empuja las fotos desde el centro a medida que el viewport baja de 1728px
+	--_spread: max(0px, 1728px - 100vw);
+
+	position: relative;
+	aspect-ratio: 1728 / 1347; // proporcional al viewport
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow-x: clip;
+
+	&.theme--surface-secondary {
+		background-color: var(--surface-secondary);
+	}
+}
+
+// ── TEXTOS: encima de las imágenes ───────────────────────────────────────────
+
+.block-multi-photo-extended__texts {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	max-width: calc(730px + var(--Margins-margin-left-right, 40px) * 2);
+	padding: 0px var(--Margins-margin-left-right, 40px);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: var(--Gap-between-elements-sm, 32px);
+	text-align: center;
+
+	p {
+		margin: 0;
+		margin-bottom: 0.87em;
+
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+
+.block-multi-photo-extended__buttons {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: var(--Gap-between-buttons, 16px);
+}
+
+// ── CONTENEDOR DE IMÁGENES: cubre todo el bloque en desktop ──────────────────
+
+.block-multi-photo-extended {
+	.block-multi-photo-extended__images {
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	// ── SLOT INDIVIDUAL ──────────────────────────────────────────────────────
+
+	.images__image {
+		position: absolute;
+		border-radius: var(--img-radius);
+		overflow: hidden;
+		opacity: 0;
+		transform: scale(0.92);
+
+		&.images__image--visible {
+			transition:
+				opacity 0.6s cubic-bezier(0.0, 0.0, 0.2, 1),
+				transform 0.6s cubic-bezier(0.0, 0.0, 0.2, 1);
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	.image__img {
+		width: 100%;
+		height: 100%;
+		background: lightgray 50% / cover no-repeat;
+		opacity: 0;
+
+		&.image__img--loaded {
+			transition: opacity 0.5s;
+			opacity: 1;
+		}
+	}
+
+	// ── POSICIONES DESKTOP (Figma frame 1728×1347) ──────────────────────────
+	// Coeficientes de spread: empujan cada foto alejándola del centro
+	// a medida que el viewport se reduce debajo de 1728px.
+	// Signo negativo → empuja izq/arriba · positivo → empuja der/abajo
+
+	.images__image--1 {
+		width: 13.66%;
+		aspect-ratio: 236 / 268;
+		left: calc(33.56% - var(--_spread) * 0.06);
+		top: calc(5.12% - var(--_spread) * 0.03);
+	}
+
+	.images__image--2 {
+		width: 16.44%;
+		aspect-ratio: 284 / 325;
+		left: calc(61.98% + var(--_spread) * 0.07);
+		top: calc(6.16% - var(--_spread) * 0.03);
+	}
+
+	.images__image--3 {
+		width: 8.68%;
+		aspect-ratio: 150 / 171;
+		left: calc(16.78% - var(--_spread) * 0.05);
+		top: calc(20.64% - var(--_spread) * 0.04);
+	}
+
+	.images__image--4 {
+		width: 16.55%;
+		aspect-ratio: 286 / 325;
+		left: calc(5.27% - var(--_spread) * 0.09);
+		top: 46.4%;
+	}
+
+	.images__image--5 {
+		width: 16.55%;
+		aspect-ratio: 286 / 325;
+		left: calc(26.16% - var(--_spread) * 0.11);
+		top: calc(66.44% + var(--_spread) * 0.07);
+	}
+
+	.images__image--6 {
+		width: 16.55%;
+		aspect-ratio: 286 / 325;
+		left: calc(78.41% + var(--_spread) * 0.09);
+		top: calc(61.8% + var(--_spread) * 0.05);
+	}
+
+	.images__image--7 {
+		width: 10.19%;
+		aspect-ratio: 176 / 200;
+		left: calc(61.69% + var(--_spread) * 0.12);
+		top: calc(65.78% + var(--_spread) * 0.07);
+	}
+
+	// ── RESPONSIVE: 4 arriba → texto → 3 abajo (staggered) ─────────────────
+
+	@media (width < #{$min-width-lg}) {
+		position: static;
+		aspect-ratio: auto;
+		--_spread: 0px;
+
+		// Flex-wrap horizontal: imágenes y texto se intercalan vía order
+		display: flex;
+		flex-direction: row; // override del column de desktop
+		flex-wrap: wrap;
+		align-items: flex-start;
+		justify-content: center;
+		column-gap: 12px;
+		row-gap: var(--Gap-between-elements-sm, 32px);
+		padding: var(--Margins-margin-top-bottom-sm, 40px) var(--Margins-margin-left-right, 24px);
+
+		// El contenedor desaparece; sus hijos participan del flex del bloque
+		.block-multi-photo-extended__images {
+			display: contents;
+		}
+
+		// Texto: ancho completo, en el medio
+		.block-multi-photo-extended__texts {
+			width: 100%;
+			max-width: 100%;
+			padding: 0;
+			order: 2;
+		}
+
+		// Reset de todos los slots
+		.images__image {
+			position: static !important;
+			width: auto !important;
+			height: auto !important;
+			top: auto !important;
+			left: auto !important;
+			right: auto !important;
+			margin: 0;
+			aspect-ratio: 3 / 4 !important;
+		}
+
+		// ── Fila 1: 4 imágenes ──────────────────────────────────────────────
+		.images__image--1,
+		.images__image--2,
+		.images__image--3,
+		.images__image--4 {
+			width: calc(25% - 9px) !important;
+			order: 1;
+		}
+
+		// Stagger: fotos de los bordes bajan un poco
+		.images__image--1,
+		.images__image--4 {
+			margin-top: 28px !important;
+		}
+
+		// ── Fila 2: 3 imágenes ──────────────────────────────────────────────
+		.images__image--5,
+		.images__image--6,
+		.images__image--7 {
+			width: calc(28% - 8px) !important;
+			order: 3;
+		}
+
+		// Stagger: foto central baja un poco
+		.images__image--6 {
+			margin-top: 28px !important;
+		}
+	}
+
+	// ── REDUCED MOTION ───────────────────────────────────────────────────────
+
+	@media (prefers-reduced-motion: reduce) {
+		.images__image {
+			transition: opacity 0.3s !important;
+			transform: scale(1) !important;
+		}
+	}
+}

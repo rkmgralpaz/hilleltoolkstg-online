@@ -1,0 +1,374 @@
+body:not(.touch-device) .btn {
+
+		&:hover:not(:disabled):not(.btn--tertiary):not(.disabled) {
+			background-color: var( --bttn-surface-hover);
+		}
+
+		&.btn--secondary {
+	
+			&:hover:not(:disabled) {
+				background-color: var(--bttn-surface-hover);
+				border-color: transparent;
+				.btn__text {
+					color: var(--bttn-text-fill);
+				}
+				.btn__icon {
+					svg {
+						path {
+							fill: var(--icon-bttn-fill);
+						}
+					}
+				}
+			}
+		}
+	
+		&.btn--subtle {
+			&:hover:not(:disabled):not(.disabled) {
+				background-color: var(--surface-secondary);
+			}
+		}
+}
+
+.btn {
+	//default sm primary
+	display: inline-flex;
+	height: var(--size-size-buttons-sm);
+	padding: 0px var(--Padding-button-sm);
+	align-items: center;
+	gap: var(--Gap-default-4xs);
+	flex-shrink: 0;
+
+	border-radius: var(--Corner-Radius-radius-buttons);
+	background-color: var(--bttn-surface);
+
+	transition: background-color 0.3s, color 0.3s !important;
+
+	// &:hover {
+	// 	background-color: var( --bttn-surface-hover);
+	// }
+
+	.btn__text {
+		color: var(--bttn-text-fill);
+		@include font-body-md;
+		position: relative;
+		top: -1px;
+	}
+
+	&.btn--large {
+		.btn__text {
+			@include font-body-md;
+			position: relative;
+			top: -1px;
+		}
+	}
+
+	&.btn--small {	
+		.btn__text {
+			position: relative;
+			top: -1.5px;
+			@include font-body-sm;
+		}
+	}	
+
+	.btn__icon {
+		line-height: 0; //no se de donde hereda un line height (del reset o algo asi)
+		svg {
+			width: var(--size-size-icon-sm);
+			height: var(--size-size-icon-sm);
+			path {
+				fill: var(--icon-bttn-fill);
+			}
+		}
+	}
+
+	&.btn--disabled,
+	&[disabled] {
+		background-color: var(--bttn-surface-disabled);
+		.btn__text {
+			color: var(--bttn-text-disabled);
+		}
+	
+		.btn__icon {
+			svg {
+				path {
+					fill: var(--icon-bttn-disabled);
+				}
+			}
+		}
+	}
+
+	&.btn--icon-only {
+		width: var(--size-size-buttons-sm);
+		height: var(--size-size-buttons-sm);
+		padding: 0px var(--Padding-button-sm);
+		justify-content: center;
+		align-items: center;
+		gap: var(--Gap-default-4xs);
+		border-radius: var(--Corner-Radius-radius-buttons-icon-only);
+
+		&.btn--large {
+			width: var(--size-size-buttons-lg);
+		}
+
+		&.btn--small {
+			width: var(--size-size-buttons-sm);
+		}	
+	}
+
+	&.btn--primary,
+	&.btn--secondary,
+	&.btn--subtle,
+	&.btn--elevated {
+
+		&.btn--small {
+
+			height: var(--size-size-buttons-sm);
+			padding: 0px var(--Padding-button-sm);
+			gap: var(--Gap-default-4xs);
+
+			&.btn--icon-only {
+
+			}
+			
+		}
+
+		&.btn--large {
+			height: var(--size-size-buttons-lg);
+			padding: 0px var(--Padding-button-lg);
+			gap: var(--Gap-default-3xs);
+
+			&.btn--icon-only {
+
+			}
+
+		}
+
+	}
+  
+	&.btn--primary {
+
+		&.btn--small {
+
+			&.btn--icon-only {
+
+			}
+			
+		}
+
+		&.btn--large {
+
+			&.btn--icon-only {
+
+			}
+
+		}
+
+	}
+
+	&.btn--secondary {
+
+		background-color: transparent;
+		border-color: var(--border);
+		border-width: var(--Strokes-stroke-widht-md);
+		border-style: solid;
+		
+		.btn__text {
+			color: var(--bttn-text-ghost);
+		}
+
+		.btn__icon {
+			svg {
+				path {
+					fill: var(--icon-bttn-ghost);
+				}
+			}
+		}
+
+		// &:hover {
+		// 	background-color: var(--bttn-surface-hover);
+		// 	border-color: transparent;
+		// 	.btn__text {
+		// 		color: var(--bttn-text-fill);
+		// 	}
+		// 	.btn__icon {
+		// 		svg {
+		// 			path {
+		// 				fill: var(--icon-bttn-fill);
+		// 			}
+		// 		}
+		// 	}
+		// }
+
+		&.btn--disabled,
+		&[disabled] {
+			background-color: transparent;
+			border-color: var(--border-disabled);
+			.btn__text {
+				color: var(--bttn-text-disabled);
+			}
+			.btn__icon {
+				svg {
+					path {
+						fill: var(--icon-bttn-disabled);
+					}
+				}
+			}
+		}
+
+	}
+
+	&.btn--subtle {
+
+		background-color: transparent;
+		border: none;
+
+		.btn__text {
+			color: var(--bttn-text-ghost);
+		}
+
+		.btn__icon {
+			svg {
+				path {
+					fill: var(--icon-bttn-ghost);
+				}
+			}
+		}
+
+		// &:hover {
+		// 	background-color: var(--surface-secondary);
+
+		// }
+
+		&.btn--disabled,
+		&[disabled] {
+			background-color: transparent;
+			border-color: var(--border-disabled);
+			.btn__text {
+				color: var(--bttn-text-disabled);
+			}
+			.btn__icon {
+				svg {
+					path {
+						fill: var(--icon-bttn-disabled);
+					}
+				}
+			}
+		}
+
+	}
+
+	&.btn--tertiary {
+
+		border-radius: 0;
+		background-color: transparent;
+		border: none;
+		text-decoration: underline;
+		text-underline-offset: 7px;
+		text-decoration-thickness: 1.5px;
+		padding: 0 ;
+
+		.btn__text {
+			color: var(--bttn-text-ghost);
+		}
+
+		.btn__icon {
+			svg {
+				path {
+					fill: var(--icon-bttn-ghost);
+				}
+			}
+		}
+
+		&.btn--disabled,
+		&[disabled] {
+			background-color: transparent;
+			border-color: var(--border-disabled);
+			.btn__text {
+				color: var(--bttn-text-disabled);
+				text-decoration-color: var(--bttn-text-disabled);
+			}
+			.btn__icon {
+				svg {
+					path {
+						fill: var(--icon-bttn-disabled);
+					}
+				}
+			}
+		}
+	}
+
+	&.btn--tag{
+		--bttn-text-fill-hover: var(--bttn-text-fill);
+		.btn__text {
+			color: var(--bttn-text-fill);
+			@include font-label-md;
+			position: relative;
+			text-transform: uppercase;
+			top: 0;
+			transition: color 0.3s;
+		}
+		.btn__icon {
+			svg {
+				path {
+					fill: var(--bttn-text-fill);
+				}
+			}
+		}
+		&:not(.btn--icon-before):not(.btn--icon-after){
+			.btn__icon{
+				display: none;
+			}
+		}
+		&.btn--show-icon-only-selected{
+			.btn__icon {
+				display: none;
+			}
+			&.btn--selected{
+				.btn__icon {
+					display: inherit;
+				}	
+			}
+		}
+		&.btn--selected:not(:disabled){
+			background-color: var(--bttn-surface-hover);
+			border-color: transparent;
+			.btn__text {
+				color: var(--bttn-text-fill-hover);
+			}
+			.btn__icon {
+				svg {
+					path {
+						fill: var(--bttn-text-fill-hover);
+					}
+				}
+			}
+		}
+		&:hover:not(:disabled):not(.disabled){
+			.btn__text {
+				color: var(--bttn-text-fill-hover);
+			}
+			.btn__icon {
+				svg {
+					path {
+						fill: var(--bttn-text-fill-hover);
+					}
+				}
+			}
+		}
+		border-radius: var(--corner-radius-rad-xxs, 4px);
+		display: flex;
+		padding: var(--Padding-tags, 8px);
+		align-items: center;
+		gap: 8px;
+		width: fit-content;
+	}
+
+}
+
+body.touch-device .btn {
+	&.btn--tag:hover{
+		.btn__text {
+			color: var(--bttn-text-fill);
+		}
+	}
+}

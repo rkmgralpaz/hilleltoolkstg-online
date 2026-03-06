@@ -1,0 +1,119 @@
+.block-repeater-wicons {
+	display: flex;
+	padding: var(--Margins-margin-top-bottom-reg) var(--Margins-margin-left-right);
+
+	flex-direction: column;
+	gap: var(--Gap-default-3xl);
+	& > div:first-child {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		
+		gap: var(--Gap-default-md);
+		align-self: stretch;
+		
+		@media (min-width: #{$min-width-md}) {
+			align-items: center;
+			text-align: center;
+		}
+		& > div:first-child {
+			display: flex;
+			flex-direction: column;
+			gap: var(--Gap-default-md, 24px);
+			
+		}
+		& > div:last-child {
+			p {
+				margin-top: 0;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+
+	.block-repeater-wicons__main-text {
+		max-width: var(--Max-Width-container-md);
+
+	}
+
+	.block-repeater-wicons__bottom {
+		display: flex;
+		row-gap: var(--Gap-between-elements-md);
+		flex-direction: column;
+		@media (min-width: #{$min-width-md}) {
+			flex-direction: row;
+			gap: var(--Gap-between-elements-md);
+			flex-wrap: wrap;
+		}
+
+
+	}
+	.block-repeater-wicons__box {
+		display: flex;
+		flex-direction: column;
+		gap: var(--Gap-default-xs);
+		width: 100%;
+		@media (min-width: #{$min-width-md}) {
+			flex: 0 0 calc((100% / 2) - var(--Gap-between-elements-md));
+		}
+		@media (min-width: #{$min-width-lg}) {
+			flex: 0 0 calc((100% / 3) - var(--Gap-between-elements-md));
+		}
+		@media (min-width: #{$min-width-xl}) {
+		
+		}
+	}
+
+	.block-repeater-wicons__box-top {		
+		display: flex;
+		justify-content: space-between;
+		gap: var(--Gap-default-xs);
+		flex-direction: column;	
+	}
+
+	.block-repeater-wicons__box-icon {
+		display: flex;
+		width: var(--size-size-circle);
+		height: var(--size-size-circle);
+		padding: 2px;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		background: var(--surface-secondary);
+		color: var(--border);
+		svg {
+			width: var(--size-size-icon-md);
+			height: var(--size-size-icon-md);
+			path {
+				stroke: var(--border);
+			}
+		}
+	}
+
+	.block-repeater-wicons__box-buttons {
+		display: flex;
+		align-items: center;
+		gap: var(--Gap-between-buttons);
+	}
+	.block-repeater-wicons__box-text {
+		p {
+			margin-top: 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		a {
+			text-decoration: underline;
+			text-underline-offset: var(--text-underline-offset);
+			text-decoration-thickness: 1.5px;
+			padding-left: 4px;
+			padding-right: 4px;
+		}
+		strong {
+			font-weight: 600;
+		}
+	}
+
+}

@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_68951320c922b",
+    "title": "Data Interactive Landing",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Data Interactive Landing",
+    "menu_slug": "data-interactive-landing",
+    "parent_slug": "edit.php?post_type=data_interactive",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "Data Interactive Landing",
+    "position": 0,
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update Data",
+    "updated_message": "Data Updated",
+    "capability": "edit_posts",
+    "data_storage": "post_id",
+    "post_id": "data_interactive",
+    "autoload": 0,
+    "modified": 1756995051
+}

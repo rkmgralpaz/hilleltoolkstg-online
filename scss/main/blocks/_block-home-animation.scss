@@ -1,0 +1,100 @@
+.block-home-animation {
+	padding: 0 calc(var(--Margins-margin-left-right) - 0.1vw);
+	padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height) + 40px) !important;
+	@media (width < $min-width-md) {
+		padding: 0 var(--Margins-margin-left-right);	
+		//padding-top: calc(var(--site-header-logo-top) + var(--site-header-logo-height) + 20px) !important;
+	}
+	&.loaded{
+		.block-home-animation__lottie-xl,
+		.block-home-animation__lottie-md,
+		.block-home-animation__lottie-xs{
+			transition: opacity 0.5s, transform 0.5s ease-out;
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+}
+.block-home-animation__lottie-xl,
+.block-home-animation__lottie-md,
+.block-home-animation__lottie-xs{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	//background-color: orange;
+	transform: scale(0.95);
+	opacity: 0;
+	svg{
+		display: block;
+		margin: 0 auto;
+	}
+}
+
+
+$min-width-sm: 320px;
+$min-width-md: 700px;
+$min-width-lg: 1120px;
+$min-width-xl: 1440px;
+
+$max-width-sm: 699px;
+$max-width-md: 1119px;
+$max-width-lg: 1439px;
+$max-width-xl: 1920px;
+
+.block-home-animation__lottie-xl{
+	aspect-ratio: 1419 / 427;
+	@media (width > $max-width-md){
+		display: inherit;
+	}
+	@media (width > $max-width-sm) and (width < $min-width-lg) {
+		display: none;
+	}
+	@media (width < $min-width-md) {
+		display: none;
+	}
+}
+.block-home-animation__lottie-md{
+	aspect-ratio: 2238 / 1040;
+	@media (width > $max-width-md){
+		display: none;
+	}
+	@media (width > $max-width-sm) and (width < $min-width-lg) {
+		display: inherit;
+	}
+	@media (width < $min-width-md) {
+		display: none;
+	}
+}
+.block-home-animation__lottie-xs{
+	width: 100%;
+	max-width: 400px;
+	aspect-ratio: 400 / 518;
+	margin: 0 auto;
+	@media (width > $max-width-md){
+		display: none;
+	}
+	@media (width > $max-width-sm) and (width < $min-width-lg) {
+		display: none;
+	}
+	@media (width < $min-width-md) {
+		display: inherit;
+	}
+	svg{
+		width: 100%;
+	}
+}
+.block-home-animation__bottom{
+	//padding: var(--Margins-margin-top-bottom-md) var(--Margins-margin-left-right);
+	padding-top: var(--Margins-margin-top-bottom-md);
+	padding-bottom: var(--Margins-margin-top-bottom-lg);
+	max-width: 1350px;
+	p{
+		margin: 0;
+	}
+}
+.block-home-animation__buttons{
+	padding-top: 32px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 12px;
+}

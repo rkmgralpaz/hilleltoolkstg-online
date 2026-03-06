@@ -1,0 +1,27 @@
+.block-embed-code {
+	padding: 0 var(--Margins-margin-left-right);
+	display: flex;
+	flex-direction: column;
+}
+.block-embed-code__wrapper{
+	padding: var(--Margins-margin-top-bottom-sm) 0;
+	width: 100%;
+	min-height: 300px;
+	&.embed-code--center{
+		align-self: center;
+	}
+	&.embed-code--right{
+		align-self: flex-end;
+	}
+	&.embed-code--wmt{
+		padding-top: 0;
+	}
+	&.embed-code--wmb{
+		padding-bottom: 0;
+	}
+	iframe{
+		margin: 0 auto;
+		width: 100%;
+		background-color: transparent !important;
+	}
+}

@@ -1,0 +1,187 @@
+$tooltip-notch-offset-bottom: 18px;
+$tooltip-notch-color: var(--neutral-000);
+$tooltip-notch-border-color: rgba(0, 0, 0, 0.06);
+$tooltip-notch-width: 20px;
+$tooltip-notch-height: 18px;
+
+.block-other-stats {
+    display: flex;
+    padding: var(--Margins-margin-top-bottom-md) 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--Gap-between-elements-md);
+
+    .block-other-stats__header {
+        align-self: stretch;
+        padding-bottom: var(--Gap-default-md);
+        border-bottom: 1px solid var(--divider);
+    }
+
+    .block-other-stats__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: var(--Gap-default-lg);
+        align-self: stretch;
+
+        .other-stats__item {
+            flex: 0 0 100%;
+        }
+
+        @media (min-width: #{$min-width-md}) {
+            justify-content: center;
+            .other-stats__item {
+                flex: 0 0 calc((100% - var(--Gap-default-lg)) / 2);
+            }
+        }
+
+        // XL: una sola fila; centrado por defecto
+        @media (min-width: #{$min-width-lg}) {
+            flex-wrap: nowrap;
+            justify-content: center;
+
+            // 3/2/1 ítems → siguen en 25% y centrados
+            &.block-other-stats__list--items-1,
+            &.block-other-stats__list--items-2,
+            &.block-other-stats__list--items-3 {
+                .other-stats__item {
+                    flex: 0 0 25%;
+                }
+            }
+
+            // 4 ítems → 25% real descontando los 3 gaps para no saltar de fila
+            &.block-other-stats__list--items-4 {
+                justify-content: flex-start;
+
+                .other-stats__item {
+                    flex: 0 0 calc((100% - (3 * var(--Gap-default-lg))) / 4);
+                }
+            }
+        }
+    }
+
+    .stat__tooltip {
+        visibility: hidden;
+        z-index: 10;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);
+        width: 100%;
+        height: auto;
+        border-radius: 24px;
+        background: var(--neutral-100);
+        padding: var(--Padding-xsmall-container);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        box-shadow: none;
+        background-color: $tooltip-notch-color;
+
+        .stat__tooltip-content {
+            transform: translateY(4px);
+            transition: transform 0.3s ease;
+        }
+
+        .stat__tooltip-notch {
+            position: absolute;
+            bottom: -$tooltip-notch-offset-bottom;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: calc($tooltip-notch-width / 2) solid transparent;
+            border-right: calc($tooltip-notch-width / 2) solid transparent;
+            border-top: $tooltip-notch-height solid $tooltip-notch-color;
+            z-index: 100;
+        }
+
+        .stat__tooltip-notch-2 {
+            position: absolute;
+            bottom: -($tooltip-notch-offset-bottom + 1.5px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: calc(($tooltip-notch-width / 2) + 1px) solid transparent;
+            border-right: calc(($tooltip-notch-width / 2) + 1px) solid transparent;
+            border-top: calc($tooltip-notch-height + 1px) solid $tooltip-notch-border-color;
+            z-index: 90;
+            box-shadow: none;
+        }
+
+        .stat__tooltip-notch-3 {
+            position: absolute;
+            bottom: -($tooltip-notch-offset-bottom + 1.5px);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: calc(($tooltip-notch-width / 2) + 1px) solid transparent;
+            border-right: calc(($tooltip-notch-width / 2) + 1px) solid transparent;
+            border-top: calc($tooltip-notch-height + 1px) solid $tooltip-notch-color;
+            z-index: 89;
+            box-shadow: none;
+        }
+    }
+
+    .other-stats__item {
+        position: relative;
+    }
+
+    .other-stats__item-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        cursor: default;
+    }
+
+    .other-stats__item-value {
+        transform: 0.3s;
+
+    }
+
+    .other-stats__item-bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--Gap-default-4xs);
+        align-self: stretch;
+    }
+
+    @media (min-width: #{$min-width-lg}) {
+        .other-stats__item:hover {
+            .other-stats__item-value {
+                color: var(--blue-400);
+            }
+
+            .stat__tooltip {
+                visibility: visible;
+
+                .stat__tooltip-content {
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        .stat--focus {
+            .stat__bar {
+                background: var(--neutral-900);
+                color: var(--neutral-100);
+            }
+
+            .stat__tooltip {
+                visibility: visible;
+            }
+        }
+    }
+
+    .other-stats__item.no-description {
+        pointer-events: none;
+        cursor: default;
+
+        .stat__tooltip {
+            display: none;
+        }
+    }
+
+}

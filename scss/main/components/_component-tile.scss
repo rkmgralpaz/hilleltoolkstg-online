@@ -1,0 +1,109 @@
+.component-tile {
+    border-radius: var(--Corner-Radius-radius-container-lg);
+    display: block;
+    padding: var(--Padding-medium-container);
+    overflow: hidden;
+
+    @media screen and (min-width: #{$min-width-xl}) {
+        min-height: 462px;
+    }
+
+    &.component-tile-year {
+        img {
+            position: absolute;
+            width: 780px;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+
+            @media screen and (max-width: #{$max-width-md}) {
+                height: 160px;
+            }
+        }
+
+
+        @media screen and (min-width: #{$min-width-lg}) {
+            img {
+                width: calc(100% + var(--Gap-default-md) * 2);
+                margin-left: calc(-1 * var(--Gap-default-md));
+
+            }
+        }
+    }
+
+    &.component-tile-comparisson {
+        img {
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+
+            @media screen and (max-width: #{$max-width-md}) {
+                width: 240px;
+            }
+
+
+            @media screen and (min-width: #{$min-width-xl}) {
+                width: 300px;
+                margin-top: var(--Padding-medium-container);
+            }
+        }
+
+        .component-tile__img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .component-tile__img {
+        flex: 1 0 auto;
+        position: relative;
+    }
+
+    .component-tile__wrap {
+        height: 240px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        @media screen and (min-width: #{$min-width-xl}) {
+            height: 280px;
+        }
+    }
+
+    .component-tile__top {
+        display: flex;
+        align-items: flex-start;
+        align-self: stretch;
+        flex: 0 0 auto;
+    }
+
+    .component-tile__title {
+        flex: 1;
+    }
+
+    .component-tile__button {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .component-tile__blurb {
+        @media screen and (min-width: #{$min-width-lg}) {
+            margin-top: var(--Padding-medium-container);
+        }
+
+        p {
+            margin-top: 0;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+    }
+
+
+}

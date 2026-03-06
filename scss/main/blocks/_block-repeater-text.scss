@@ -1,0 +1,91 @@
+.block-repeater-text-container {
+	&.block-repeater-text-container-box {
+		padding: var(--Margins-margins-elevated);
+		.theme {
+			border-radius: var(--Corner-Radius-radius-container-lg);
+		}
+	}
+}
+.block-repeater-text {
+	display: flex;
+	padding: var(--Margins-margin-top-bottom-reg) var(--Margins-margin-left-right);
+	flex-direction: column;
+	gap: var(--Gap-between-elements-lg);
+	& > div:first-child {
+		display: flex;
+		flex-direction: column;
+		gap: var(--Gap-default-xl);
+		& > div:first-child {
+			display: flex;
+			flex-direction: column;
+			gap: var(--Gap-default-xs);
+		}
+		& > div:last-child {
+			p {
+				margin-top: 0;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	.block-repeater-text__bottom {
+		display: flex;
+		row-gap: var(--Gap-between-elements-md);
+		flex-direction: column;
+		@media (min-width: #{$min-width-md}) {
+			flex-direction: row;
+			gap: var(--Gap-between-elements-md);
+			flex-wrap: wrap;
+		}
+		@media (min-width: #{$min-width-lg}) {
+			gap: var(--Margins-margin-top-bottom-reg) var(--Gap-between-elements-sm) ;
+		}
+
+	}
+	.block-repeater-text__box {
+		display: flex;
+		flex-direction: column;
+		gap: var(--Gap-default-xs);
+		width: 100%;
+		@media (min-width: #{$min-width-md}) {
+			flex: 0 0 calc((100% / 2) - var(--Gap-between-elements-md));
+		}
+		@media (min-width: #{$min-width-lg}) {
+			flex: 0 0 calc((100% / 3) - var(--Gap-between-elements-sm));
+		}
+		@media (min-width: #{$min-width-xl}) {
+		
+		}
+		& > div:first-child {
+			display: flex;
+			flex-direction: column;
+			gap: var(--Gap-default-3xs);
+		}
+	}
+	.block-repeater-text__box-buttons {
+		display: flex;
+		align-items: center;
+		gap: var(--Gap-between-buttons);
+	}
+	.block-repeater-text__box-text {
+		p {
+			margin-top: 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		a {
+			text-decoration: underline;
+			text-underline-offset: var(--text-underline-offset);
+			text-decoration-thickness: 1.5px;
+			padding-left: 4px;
+			padding-right: 4px;
+		}
+		strong {
+			font-weight: 600;
+		}
+	}
+
+}

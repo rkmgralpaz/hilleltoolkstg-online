@@ -1,0 +1,11 @@
+ .block-tiles {
+     display: grid;
+     grid-template-columns: 1fr;
+     padding: var(--Margins-margin-top-bottom-sm) var(--Margins-margin-left-right);
+     gap: var(--Gap-default-md);
+
+     @media screen and (min-width: #{$min-width-lg}) {
+         grid-template-columns: 1fr 1fr;
+     }
+     padding-top: 0;
+ }

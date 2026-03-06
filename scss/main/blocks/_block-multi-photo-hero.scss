@@ -1,0 +1,276 @@
+.block-multi-photo-hero{
+	--displacement-img: 104px;
+	--image-width: 317px;
+	--image-height: calc(var(--image-width) * 1.0915);
+	--image-transition-time: 0.6s;
+	--image-transition-delay: 0.1s;
+	//
+	display: flex;
+	//max-width: var(--max-widht, 1920px);
+	padding: var(--Margins-margin-top-bottom-lg) 0px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	&.theme--surface-secondary{
+		background-color: var(--surface-secondary);
+	}
+	@media (width < #{$min-width-lg}) {
+		flex-direction: column-reverse;
+		gap: var(--Margins-margin-top-bottom-sm, 40px);
+	}	
+	@media (width < #{$min-width-md}) {
+		gap: var(--Margins-margin-top-bottom-md, 40px);
+	}	
+}
+.block-multi-photo-hero__texts{
+	width: 100%;
+	display: flex;
+	max-width: var(--Max-Width-container-sm, 960px);
+	padding: 0px var(--Margins-margin-left-right, 40px);
+	flex-direction: column;
+	align-items: center;
+	gap: var(--Gap-between-elements-sm, 32px);
+	align-self: stretch;
+	margin: 0 auto;
+	text-align: center;
+	p{
+		margin: 0;
+		margin-bottom: 0.87em;
+		&:last-child{
+			margin: 0;
+		}
+	}
+}
+.block-multi-photo-hero__buttons{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: var(--Gap-between-buttons, 16px);
+}
+.block-multi-photo-hero__images{
+	width: 100%;
+	max-width: 1600px;
+	padding: 0 var(--Margins-margin-left-right, 40px);
+	display: flex;
+	justify-content: space-between;
+	gap: var(--Margins-margin-left-right, 40px);
+	@media (width < 1476px) {
+		width: inherit;
+		//max-width: none;
+		//padding: 0;
+		justify-content: center;
+	}
+	@media (width < #{$min-width-lg}) {
+		--image-width: 204px;
+		--image-height: calc(var(--image-width) * 1.0915);
+		--displacement-img: 60px;
+	}
+	@media (width < #{$min-width-md}) {
+		--image-width: 152px;
+		--image-height: calc(var(--image-width) * 1.0915);
+		--displacement-img: 32px;
+	}
+	.images__group{
+		display: flex;
+		gap: var(--Margins-margin-left-right, 40px);
+	}
+	.images__image{
+		border-radius: var(--Gap-default-3xs, 8px);
+		width: var(--image-width);
+		height: var(--image-height);
+		background: lightgray 50% / cover no-repeat;
+		overflow: hidden;
+		opacity: 0;
+		transform: scale(0.9);
+		&.images__image--visible{
+			transition: opacity var(--image-transition-time), transform var(--image-transition-time) ease-out;
+			transition-delay: var(--image-transition-delay);
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+	.images__image--2{
+		margin-top: var(--displacement-img);
+	}
+	.images__image--3{
+		margin-top: var(--displacement-img);
+	}
+	@media (width < #{$min-width-lg}) {
+		.images__image--1{
+			margin-top: var(--displacement-img);
+		}
+		.images__image--2{
+			margin-top: 0;
+		}
+		.images__image--3{
+			margin-top: 0;
+		}
+		.images__image--4{
+			margin-top: var(--displacement-img);
+		}
+	}
+	@media (width < #{$min-width-md}) {
+		.images__image--3{
+			margin-top: var(--displacement-img);
+		}
+		.images__image--4{
+			display: none;
+		}
+	}
+	.image__img{
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		&.image__img--loaded{
+			transition: 0.5s;
+			opacity: 1;
+		}
+	}
+}
+
+
+/* 
+
+Este módulo es una copia modificada de multi-photo.
+Usa por defecto el layout de .block-multi-photo--animated, es decir que a diferencia de multi-photo tiene el mismo layout cuando está animado y cuando no.
+Cambia la cantidad de fotos (3 en lugar de 5) y las posiciones. 
+
+*/
+
+.block-multi-photo-hero{
+	--image-transition-time: 2s;
+	--image-transition-delay: 0.1s;
+	--block-height: 980px;
+	--image-width: min(15vw,260px);
+	--image-height: calc(var(--image-width) * 1.13);
+	--displacement-img: 0;
+	--width-mobile-mode: #{$min-width-lg};
+	//
+	position: relative;
+	height: var(--block-height);
+	.block-multi-photo-hero__texts{
+		z-index: 1;
+		//max-width: calc(730px + var(--Margins-margin-left-right) * 2);
+		@media (width <= 1500px) {
+			max-width: 730px;
+		}
+	}
+	.block-multi-photo-hero__images{
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		max-width: none;
+		height: 100%;
+		//background-color: rgb(109, 83, 87);
+	}
+	.images__image{
+		position: absolute;
+		&.images__image--visible{
+			transition: opacity calc(var(--image-transition-time) / 5 * 4), transform var(--image-transition-time) ease-out;
+			transition-delay: var(--image-transition-delay);
+		}
+	}
+	.images__image--1{
+		--image-top: -2.2%;
+		--image-bottom: auto;
+		--image-left: 39%;//var(--Margins-margin-left-right);
+		--image-right: auto;
+		&.images__image--t2{
+			--image-top: -3%;
+			--image-bottom: auto;
+			--image-left: 31%;
+			--image-right: auto;
+		}
+		width: var(--image-width);
+		height: var(--image-height);
+		top: var(--image-top);
+		bottom: var(--image-bottom);
+		left: var(--image-left);
+		right: var(--image-right);
+	}
+	.images__image--2{
+		--image-top: 27.8%;
+		--image-bottom: auto;
+		--image-left: auto;//23.8%;
+		--image-right: var(--Margins-margin-left-right);
+		&.images__image--t2{
+			--image-top: 38%;
+		}
+		width: var(--image-width);
+		height: var(--image-height);
+		top: var(--image-top);
+		bottom: var(--image-bottom);
+		left: var(--image-left);
+		right: var(--image-right);
+	}
+	.images__image--3{
+		--image-top: auto;
+		--image-bottom: 85px;
+		--image-left: 70px;
+		--image-right: auto;
+		@media (width < 1440px) {
+			--image-left: var(--Margins-margin-left-right);
+		}
+		&.images__image--t2{
+			--image-bottom: 26%;
+		}
+		width: var(--image-width);
+		height: var(--image-height);
+		top: var(--image-top);
+		bottom: var(--image-bottom);
+		left: var(--image-left);
+		right: var(--image-right);
+	}
+	@media (width <= 1686px) {
+		--block-height: 900px;
+	}
+	@media (width <= 1300px) {
+		--block-height: 780px;
+	}
+	@media (width < #{$min-width-lg}) {
+		display: flex;
+		flex-direction: column-reverse;
+		--block-height: auto;
+		//--image-width: 250px;
+		//--image-width: 250px;
+		.block-multi-photo-hero__images{
+			width: 1120px;
+			height: auto;
+			display: flex;
+			justify-content: center;
+			align-items: flex-start;
+			gap: var(--Margins-margin-left-right);
+		}
+		.block-multi-photo-hero__images,
+		.images__image{
+			position: relative !important;
+			top: auto !important;
+			bottom: auto !important;
+			left: auto !important;
+			right: auto !important;
+		}
+		.images__image{
+			margin: 0;
+			width: 250px !important;
+			height: 287px !important;
+		}
+		.images__image--1,
+		.images__image--3{
+			margin-top: var(--core-sizes-size-md);
+		}
+	}
+	@media (width < #{$min-width-md}) {
+		.images__image{
+			width: 152px !important;
+			height: 173px !important;
+		}
+		.images__image--1,
+		.images__image--3{
+			margin-top: var(--core-sizes-size-xs);
+		}
+	}
+}

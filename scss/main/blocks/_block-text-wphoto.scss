@@ -1,0 +1,124 @@
+.block-text-wphoto {
+	display: flex;
+	padding: var(--Margins-margin-top-bottom-lg) var(--Margins-margin-left-right);
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: var(--Gap-between-elements-lg);
+
+	@media (min-width: #{$min-width-lg}) {
+		flex-direction: row;
+	}
+	@media (min-width: #{$min-width-xl}) {		
+		width: 1758px;
+		min-width: var(--min-width);
+		max-width: 100%;
+		margin-left: auto;
+        margin-right: auto;
+	}
+
+
+	.block-text-wphoto__left {
+		display: flex;
+		flex-direction: column;
+		gap: var(--Gap-between-elements-sm);
+
+		@media (min-width: #{$min-width-lg}) {
+			justify-content: center;
+			align-items: flex-start;
+			flex: 1 0 0;
+			max-width: var(--Max-Width-container-xs);
+		}
+	}
+
+	.block-text-wphoto__right {
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: var(--Gap-between-elements-sm);
+		align-self: stretch;
+
+		@media (min-width: #{$min-width-md}) {
+			width: 500px;
+			height: var(--min-width);
+			align-self: center;
+		}
+
+		@media (min-width: #{$min-width-lg}) {
+			height: 700px;
+			flex-shrink: 0;
+			
+		}
+
+	}
+
+	.block-text-wphoto__text {
+		.font-large {
+			@include font-heading-lg;
+		}
+		ul, ol {
+            margin-bottom: 1em;
+            padding-left: 1em;
+        }
+        ul {
+            li {
+                list-style-type: disc;
+            }
+        }
+        ol {
+            li {              
+                list-style: auto;
+            }
+        }
+	}
+	.block-text-wphoto__source {
+
+	}
+
+	.block-text-wphoto__source,
+	.block-text-wphoto__text {
+		p {
+			margin-top: 0;
+			margin-bottom: var(--Gap-default-md);
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		a {
+			text-decoration: underline;
+			text-underline-offset: var(--text-underline-offset);
+			text-decoration-thickness: 1.5px;
+		}
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	.block-text-wphoto__img {
+		align-self: stretch;
+		position: relative;
+		width: 100%;
+		height: 452px;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		overflow: hidden;
+		opacity: 0;
+		transition: opacity 0.3s;
+		& > div {
+			padding-top: 100%;
+		}
+		@media (min-width: #{$min-width-md}) {
+			flex: 1 0 0;
+			align-self: stretch;
+		}
+
+		&.loaded {
+			opacity: 1;
+		}
+	}
+	.block-text-wphoto__img-caption {
+
+	}
+}

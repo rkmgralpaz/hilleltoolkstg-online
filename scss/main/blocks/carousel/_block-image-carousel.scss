@@ -1,0 +1,59 @@
+.block-image-carousel {
+	padding: var(--Padding-medium-container) 0 20px 0;
+
+	.block-bannerv__left {
+		padding: var(--Padding-medium-container) var(--Margins-margin-left-right, 16px);;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: var(--Gap-default-md);
+		text-align: center;
+
+		@media (min-width: #{$min-width-md}) {
+			width: 100%;
+		}
+
+		@media (min-width: #{$min-width-lg}) {
+			
+		}
+		
+		&.block-bannerv__left--to-right {
+			@media (min-width: #{$min-width-lg}) {
+				order: 2;
+			}	
+		}
+
+		& > div:first-child {
+			display: flex;
+			flex-direction: column;
+			gap: var(--Gap-default-xs);
+		}
+	}
+
+	.block-bannerv__text {
+		max-width: var(--Max-Width-container-sm);
+		p {
+			margin-top: 0;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		a {
+			text-decoration: underline;
+			text-underline-offset: var(--text-underline-offset);
+			text-decoration-thickness: 1.5px;
+			padding-left: 4px;
+			padding-right: 4px;
+		}
+		strong {
+			font-weight: 600;
+		}
+	}
+
+	@import 'carousel';
+	@import 'carousel-prev';
+	@import 'carousel-next';
+
+}

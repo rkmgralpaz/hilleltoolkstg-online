@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_672cfe567acc6",
+    "title": "News",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "News",
+    "menu_slug": "news_archive",
+    "parent_slug": "edit.php?post_type=news",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "News Landing",
+    "position": 0,
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update",
+    "updated_message": "Updated",
+    "capability": "edit_posts",
+    "data_storage": "post_id",
+    "post_id": "news",
+    "autoload": 0,
+    "modified": 1761833883
+}

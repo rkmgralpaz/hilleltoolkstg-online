@@ -1,0 +1,85 @@
+@media screen and (min-width: #{$min-width-md}) {
+	:root {
+
+		--min-width: #{$min-width-md};
+		--max-width: #{$max-width-md};
+
+		//corner radius
+		--Corner-Radius-radius-container-lg: var(--corner-radius-rad-xl);
+
+		//size
+
+		//margins
+		--Margins-margin-left-right: var(--spacing-space-500);
+		--Margins-margin-top-bottom-sm: var(--spacing-space-450);
+		--Margins-margin-top-bottom-reg: var(--spacing-space-650);
+		--Margins-margin-top-bottom-md: var(--spacing-space-650);
+		--Margins-margin-top-bottom-lg: var(--spacing-space-750);
+		--Margins-margins-elevated: var(--spacing-space-450);
+
+		//gap
+		--Gap-between-elements-sm: var(--spacing-space-350);
+		--Gap-between-elements-md: var(--spacing-space-550);
+		--Gap-between-elements-lg: var(--spacing-space-900);
+		--Gap-default-xs: var(--spacing-space-250);
+		--Gap-default-lg: var(--spacing-space-400);
+
+		//padding
+		--Padding-small-container: var(--spacing-space-350);
+		--Padding-medium-container: var(--spacing-space-450);
+		--Padding-large-container: var(--spacing-space-600);
+
+		//fixed-width
+		--fixed-width-vertical-media-card: 380px;
+		--fixed-width-resources-cards: 512px;
+		--fixed-height-vertical-media-card: 675px;
+
+		--text-underline-offset: 4px;
+
+		// display
+		--display-sm-font-size: var(--fz-700);
+		--display-sm-line-height: var(--lh-750);
+
+		--display-md-font-size: var(--fz-700);
+		--display-md-line-height: var(--lh-700);
+
+		--display-lg2-font-size: var(--fz-800);
+		--display-lg2-line-height: var(--lh-800);
+
+		--display-lg-font-size: var(--fz-800);
+		--display-lg-line-height: var(--lh-800);
+
+		--display-xl-font-size: 180px;
+		--display-xl-line-height: 120px;
+
+		// heading
+		--heading-xs-font-size: var(--fz-200);
+		--heading-xs-line-height: var(--lh-200);
+
+		--heading-md-font-size: var(--fz-200);
+		--heading-md-line-height: var(--lh-200);
+
+		--heading-lg-font-size: var(--fz-400);
+
+		--heading-xl-font-size: var(--fz-400);
+		--heading-xl-line-height: var(--lh-400);
+
+		--heading-2xl-font-size: var(--fz-500);
+		--heading-2xl-line-height: var(--lh-450);
+
+		--heading-3xl-font-size: var(--fz-900);
+		--heading-3xl-line-height: 100%;
+
+		//body
+		--body-md-line-height: var(--lh-350);
+
+
+		//label
+		--label-lg-font-size: var(--fz-150);
+		--label-lg-line-height: var(--lh-150);
+
+		--label-xl-font-size: var(--fz-150);
+		--label-xl-line-height: var(--lh-150);
+	}
+
+}

@@ -1,0 +1,105 @@
+.block-accordion {
+	padding: var(--Margins-margin-top-bottom-md) var(--Margins-margin-left-right);
+
+    .accordion__row {
+        padding-right: 1em;
+    }
+    .block-accordion__title  {
+        margin-bottom: 40px;
+    }
+}
+
+.accordion {
+    width: 100%;
+    --accordion-transition-time: 0.4s;
+    position: relative;
+    summary {
+        overflow: hidden;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        border-top: solid 1px var(--divider);
+        padding-top: 16px;
+        padding-bottom: 16px;
+        padding-right: 3px;
+        background: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .accordion__title {
+            display: flex;
+            padding-right: 1.5em;
+        }
+    }
+    details {
+        box-sizing: border-box;
+        &:last-child{
+            border-bottom: solid 1px var(--accordion-color);
+        }
+    }
+    details summary::-webkit-details-marker {
+        display:none;
+    }
+    .accordion__content {
+        padding-bottom: 16px;
+        max-width: 90%;
+        p {
+            margin-top: 0;
+            margin-bottom: 24px;
+            padding-bottom: 0;
+            &:last-child {
+                padding: 0;
+                margin-bottom: 0;
+            }
+        } 
+        a {
+            text-decoration: underline;
+            text-underline-offset: var(--text-underline-offset);
+            text-decoration-thickness: 1.5px;
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+        strong {
+            font-weight: 600;
+        }
+        ul, ol {
+            margin-bottom: 1em;
+            padding-left: 1em;
+        }
+        ul {
+            li {
+                list-style-type: disc;
+            }
+        }
+        ol {
+            li {              
+                list-style: auto;
+            }
+        }
+    }
+    details[open] summary {
+        .accordion__icon {
+            transform: rotate(180deg);
+        }
+    }
+    &.no-outlines {
+        margin-bottom: .5em;
+        details,
+        summary{
+            width: fit-content;
+            border: none !important;
+            padding-top: 0;
+        }
+        summary{
+            text-decoration-color: var(--color-indigo);
+            text-underline-offset: 0.4em;
+            text-decoration-thickness: 1px;
+            .accordion__text {
+                padding-right: .7em;
+            }
+            .accordion__icon {
+                margin-top: 3px;
+            }
+        }
+    }
+}

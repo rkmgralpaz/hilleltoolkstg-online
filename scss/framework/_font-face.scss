@@ -1,0 +1,295 @@
+ ////* TOBIAS *///
+/* Regular */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-Regular.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-Regular.woff') format('woff'),
+       url('fonts/tobias/Tobias-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Regular Italic */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-RegularItalic.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-RegularItalic.woff') format('woff'),
+       url('fonts/tobias/Tobias-RegularItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-Bold.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-Bold.woff') format('woff'),
+       url('fonts/tobias/Tobias-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Bold Italic */
+@font-face {
+  font-family: 'fonts/tobias/Tobias';
+  src: url('fonts/tobias/Tobias-BoldItalic.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-BoldItalic.woff') format('woff'),
+       url('fonts/tobias/Tobias-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* ExtraBold */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-ExtraBold.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-ExtraBold.woff') format('woff'),
+       url('fonts/tobias/Tobias-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* ExtraBold Italic */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-ExtraBoldItalic.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-ExtraBoldItalic.woff') format('woff'),
+       url('fonts/tobias/Tobias-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-Light.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-Light.woff') format('woff'),
+       url('fonts/tobias/Tobias-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Light Italic */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-LightItalic.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-LightItalic.woff') format('woff'),
+       url('fonts/tobias/Tobias-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-Medium.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-Medium.woff') format('woff'),
+       url('fonts/tobias/Tobias-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Medium Italic */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-MediumItalic.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-MediumItalic.woff') format('woff'),
+       url('fonts/tobias/Tobias-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* SemiBold */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-SemiBold.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-SemiBold.woff') format('woff'),
+       url('fonts/tobias/Tobias-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* SemiBold Italic */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-SemiBoldItalic.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-SemiBoldItalic.woff') format('woff'),
+       url('fonts/tobias/Tobias-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Thin */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-Thin.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-Thin.woff') format('woff'),
+       url('fonts/tobias/Tobias-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Thin Italic */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-ThinItalic.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-ThinItalic.woff') format('woff'),
+       url('fonts/tobias/Tobias-ThinItalic.ttf') format('truetype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Heavy */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-Heavy.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-Heavy.woff') format('woff'),
+       url('fonts/tobias/Tobias-Heavy.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Heavy Italic */
+@font-face {
+  font-family: 'Tobias';
+  src: url('fonts/tobias/Tobias-HeavyItalic.woff2') format('woff2'),
+       url('fonts/tobias/Tobias-HeavyItalic.woff') format('woff'),
+       url('fonts/tobias/Tobias-HeavyItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+ 
+
+ ////* CALIBRE *///
+/* Black */
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-Black.otf') format('opentype'),
+    url('fonts/calibre/calibre-black.woff2') format('woff2'),
+    url('fonts/calibre/calibre-black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-BlackItalic.otf') format('opentype'),
+    url('fonts/calibre/calibre-black-italic.woff2') format('woff2'),
+    url('fonts/calibre/calibre-black-italic.woff') format('woff');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-Bold.otf') format('opentype'),
+    url('fonts/calibre/calibre-bold.woff2') format('woff2'),
+    url('fonts/calibre/calibre-bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-BoldItalic.otf') format('opentype'),
+    url('fonts/calibre/calibre-bold-italic.woff2') format('woff2'),
+    url('fonts/calibre/calibre-bold-italic.woff') format('woff');
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-Light.otf') format('opentype'),
+    url('fonts/calibre/calibre-light.woff2') format('woff2'),
+    url('fonts/calibre/calibre-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-LightItalic.otf') format('opentype'),
+    url('fonts/calibre/calibre-light-italic.woff2') format('woff2'),
+    url('fonts/calibre/calibre-light-italic.woff') format('woff');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-Medium.otf') format('opentype'),
+    url('fonts/calibre/calibre-medium.woff2') format('woff2'),
+    url('fonts/calibre/calibre-medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-MediumItalic.otf') format('opentype'),
+    url('fonts/calibre/calibre-medium-italic.woff2') format('woff2'),
+    url('fonts/calibre/calibre-medium-italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Regular */
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-Regular.otf') format('opentype'),
+    url('fonts/calibre/calibre-regular.woff2') format('woff2'),
+    url('fonts/calibre/calibre-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-RegularItalic.otf') format('opentype'),
+    url('fonts/calibre/calibre-regular-italic.woff2') format('woff2'),
+    url('fonts/calibre/calibre-regular-italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* SemiBold */
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-Semibold.otf') format('opentype'),
+    url('fonts/calibre/calibre-semibold.woff2') format('woff2'),
+    url('fonts/calibre/calibre-semibold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-SemiboldItalic.otf') format('opentype'),
+    url('fonts/calibre/calibre-semibold-italic.woff2') format('woff2'),
+    url('fonts/calibre/calibre-semibold-italic.woff') format('woff');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Thin */
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-Thin.otf') format('opentype'),
+    url('fonts/calibre/calibre-thin.woff2') format('woff2'),
+    url('fonts/calibre/calibre-thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Calibre';
+  src: url('fonts/calibre/Calibre-ThinItalic.otf') format('opentype'),
+    url('fonts/calibre/calibre-thin-italic.woff2') format('woff2'),
+    url('fonts/calibre/calibre-thin-italic.woff') format('woff');
+  font-weight: 100;
+  font-style: italic;
+}

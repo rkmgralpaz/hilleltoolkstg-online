@@ -1,0 +1,77 @@
+	.block-related-media-horizontal {
+	    display: flex;
+	    flex-direction: column;
+	    gap: var(--Gap-default-lg);
+	    background-color: transparent !important;
+
+	    .block-related-media-horizontal__header {
+	        display: flex;
+	        align-items: center;
+	        justify-content: space-between;
+	        gap: var(--Gap-default-lg);
+	    }
+
+	    .block-related-media-horizontal__title {
+	        flex: 1;
+	    }
+
+	    .block-related-media-horizontal__nav {
+	        display: flex;
+	        align-items: center;
+	        gap: var(--Gap-between-buttons-sm);
+
+	        &.block-related-media-horizontal__nav--hidden {
+	            display: none !important;
+	        }
+	    }
+
+	    .block-related-media-horizontal__nav-btn {
+	        &[disabled] {
+	            opacity: 0.4;
+	            pointer-events: none;
+	        }
+	    }
+
+	    .block-related-media-horizontal__resources {
+	        display: flex;
+	        gap: var(--Gap-default-lg);
+	        overflow-x: auto;
+	        scroll-behavior: smooth;
+	        scroll-snap-type: x proximity;
+	        padding-bottom: 8px;
+	        scrollbar-width: none;
+
+	        &::-webkit-scrollbar {
+	            display: none;
+	        }
+
+	        .resource__card {
+	            flex: 0 0 100%;
+	            max-width: 100%;
+	            min-width: 100%;
+	            scroll-snap-align: start;
+	        }
+
+	        .resource__card:only-child {
+	            flex-basis: 100%;
+	            max-width: 100%;
+	            min-width: 100%;
+	        }
+
+	        @media (min-width: 701px) {
+	            .resource__card {
+	                flex: 0 0 calc((100% - var(--Gap-default-lg)) / 2);
+	                max-width: calc((100% - var(--Gap-default-lg)) / 2);
+	                min-width: calc((100% - var(--Gap-default-lg)) / 2);
+	            }
+	        }
+
+	        @media (min-width: 1321px) {
+	            .resource__card {
+	                flex: 0 0 calc((100% - (var(--Gap-default-lg) * 2)) / 3);
+	                max-width: calc((100% - (var(--Gap-default-lg) * 2)) / 3);
+	                min-width: calc((100% - (var(--Gap-default-lg) * 2)) / 3);
+	            }
+	        }
+	    }
+	}

@@ -1,0 +1,55 @@
+ .component-trend-data {
+     display: flex;
+
+     &.component-trend-data--increase {
+         .component-trend-data__percent {
+             color: var(--negative-200);
+         }
+     }
+
+     &.component-trend-data--decrease {
+         .component-trend-data__percent {
+             color: var(--positive-200);
+         }
+     }
+
+     &.component-trend-data--single-line {
+         align-items: center;
+         flex-direction: row;
+         gap: var(--Gap-default-4xs);
+     }
+
+     &.component-trend-data--double-line {
+         flex-direction: column;
+        gap: var(--Gap-default-4xs);
+     }
+
+     &.component-trend-data--small {
+         @include font-body-xs;
+     }
+
+     &.component-trend-data--large {
+         @include font-body-sm;
+        line-height: 1;
+
+         .component-trend-data__percent {
+             font-size: 23px;
+         }
+     }
+
+     .component-trend-data__content {
+         display: flex;
+         flex-direction: row;
+         gap: var(--Gap-default-4xs);
+         align-items: center;
+     }
+
+     .component-trend-data__icon {
+         flex-shrink: 0;
+     }
+
+     .component-trend-data__text {
+         display: flex;
+         flex-direction: column;
+     }
+ }

@@ -1,0 +1,240 @@
+.carousel {
+
+	@media (max-width: #{$max-width-md}) {
+		display: none;
+	}
+
+	position: relative;
+	width: 100%;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	.carousel__btn {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 100;
+	}
+
+	.carousel__btn-prev {
+		left : 156px;
+	}
+
+	.carousel__btn-next {
+		right : 156px;
+	}
+}
+
+.carousel__main-wrapper {
+
+	position: relative;
+	width: 100%;
+	height: 600px;
+	display: flex;
+	overflow: hidden;
+
+	@media (min-width: #{$min-width-xl}) {
+		height: 750px;	
+	}
+
+	.carousel__image-wrapper,
+	.carousel__image-wrapper-aux {
+		position: absolute;
+		width: 0;
+		height: 0;
+		left: 0;
+		top: 42%;
+	}
+
+	.carousel__image-wrapper-aux {
+		z-index: 3;			
+	}
+
+	.carousel__image-holder {
+		width: auto;
+		height: 470px;
+		top: 50%;
+		position: absolute;
+		border-radius: var(--Corner-Radius-radius-media-large);
+		transform: translate(0, -50%);
+
+		@media (min-width: #{$min-width-xl}) {
+			height: 600px;	
+		}
+
+		.carousel__image-caption {
+			position: absolute;
+			left: 50%;
+			width: 100%;
+			transform: translateX(-50%);
+			padding-top: 16px;
+    		text-align: center;
+			opacity: 0;
+			transform: translate(-50%, 4px);
+			transition: all 0.3s cubic-bezier(.175,.885,.32,1);
+			p {
+				margin-top: 0;
+				margin-bottom: 0;
+				a {
+					text-decoration: underline;
+					text-underline-offset: var(--text-underline-offset);
+					text-decoration-thickness: 1.5px;
+					padding-left: 4px;
+					padding-right: 4px;
+				}
+			}
+			&.carousel__image-caption--show {
+				opacity: 1;
+				transform: translate(-50%, 0);
+			}
+		}
+		
+		img {
+			display: block;
+			width: auto;
+			height: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			border-radius: var(--Corner-Radius-radius-media-large);
+		}
+	}
+
+	.carousel__image-wrapper-1,
+	.carousel__image-wrapper-1-aux {
+		transform: translateX(-50vw) scale(0.7);
+
+		.carousel__image-holder { 
+			right: -200px;
+		}
+	}
+
+	.carousel__image-wrapper-2,
+	.carousel__image-wrapper-2-aux {
+		transform: scale(0.7);	
+		.carousel__image-holder { 
+			right: -200px;
+		}
+	}
+
+	.carousel__image-wrapper-3,
+	.carousel__image-wrapper-3-aux {
+		transform: translateX(50vw) scale(1);
+		.carousel__image-holder { 
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	.carousel__image-wrapper-4,
+	.carousel__image-wrapper-4-aux {
+		transform: translateX(100vw) scale(0.7);
+
+		.carousel__image-holder { 
+			left: -200px;
+		}
+	}
+
+	.carousel__image-wrapper-5,
+	.carousel__image-wrapper-5-aux {
+		transform: translateX(150vw) scale(0.7);
+		.carousel__image-holder { 
+			left: -200px;
+		}
+	}
+
+	&.carousel__main-wrapper--transition-next,
+	&.carousel__main-wrapper--transition-prev {
+		.carousel__image-wrapper {
+			transition: all 0.6s ease;
+		}
+	}
+
+}
+
+
+
+
+.carousel__responsive {
+    width: 100%;
+	padding: var(--Margins-margin-top-bottom-md) var(--Margins-margin-left-right);
+
+	display: flex;
+	flex-direction: column;
+	gap: var(--Margins-margin-top-bottom-sm);
+
+	@media (min-width: #{$min-width-lg}) {
+		display: none;
+	}
+
+	.carousel__responsive-slide-caption {
+		text-align: center;
+		max-width: 560px;
+		p {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+	
+	.carousel__responsive-slides {
+		display: flex;
+		transition: transform 0.5s ease-in-out;
+	}
+	
+	.carousel__responsive-slide {
+		width: 100%;
+		display: none;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		gap: var(--Margins-margin-top-bottom-sm);
+	}
+	
+	.carousel__responsive-slide img {
+		width: auto;
+		height: 200px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		border-radius: var(--Corner-Radius-radius-media-large);
+
+		@media (min-width: #{$min-width-md}) {
+			height: 400px;
+		}
+	
+	}
+	
+	.carousel__responsive-slide--fade {
+		animation: fade 0.3s ease-in-out forwards;
+	}
+	
+	@keyframes fade {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+	
+	.navigation {
+	
+		display: flex;
+		justify-content: center;
+		gap: 4px;
+	}
+	
+	.carousel__responsive-dot {
+		height: 10px;
+		width: 10px;
+		border-radius: 50%;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+		border: 1px solid var(--border);
+	}
+	
+	.carousel__responsive-dot.active {
+		background-color: var(--surface-tertiary);
+	}
+
+}
+
+
+
+	  

@@ -1,0 +1,23 @@
+{
+    "key": "ui_options_page_6887a81e0ff5d",
+    "title": "Resources",
+    "active": true,
+    "menu_order": 0,
+    "page_title": "Resources",
+    "menu_slug": "resources",
+    "parent_slug": "edit.php?post_type=resources",
+    "advanced_configuration": 1,
+    "icon_url": "",
+    "menu_title": "Resources Landing",
+    "position": 0,
+    "redirect": false,
+    "description": "",
+    "menu_icon": [],
+    "update_button": "Update",
+    "updated_message": "Updated",
+    "capability": "edit_posts",
+    "data_storage": "post_id",
+    "post_id": "resources",
+    "autoload": 0,
+    "modified": 1756995051
+}

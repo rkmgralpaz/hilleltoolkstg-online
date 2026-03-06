@@ -1,0 +1,102 @@
+@media (min-width: #{$min-width-lg}) {
+	:root {
+
+		--min-width: #{$min-width-lg};
+		--max-width: #{$max-width-lg};
+
+		//Max width container
+		--Max-Width-container-xs: 728px;
+		--Max-Width-container-sm: 960px;
+
+		//corner radius
+		--Corner-Radius-radius-container-md: var(--corner-radius-rad-lg);
+		--Corner-Radius-radius-cards: var(--corner-radius-rad-lg-2);
+
+		//size
+		--size-size-buttons-lg: var(--core-sizes-size-lg);
+		--size-size-avatars-lg: var(--core-sizes-size-lg);
+		--size-size-circle: var(--core-sizes-size-md);
+		--size-size-icon-md: var(--core-sizes-size-xxs);
+
+		//margins
+		--Margins-margin-top-bottom-md: var(--spacing-space-750);
+		--Margins-margin-top-bottom-lg: var(--spacing-space-1000);
+
+		//gap
+		--Gap-between-cards: var(--spacing-space-450);
+		--Gap-between-buttons: var(--spacing-space-250);
+		--Gap-between-elements-sm: var(--spacing-space-450);
+		--Gap-between-elements-md: var(--spacing-space-600);
+		--Gap-between-elements-lg: var(--spacing-space-1000);
+		--Gap-default-md: var(--spacing-space-350);
+		--Gap-default-lg: var(--spacing-space-450);
+		--Gap-default-xl: var(--spacing-space-500);
+		--Gap-default-2xl: var(--spacing-space-650);
+		--Gap-default-3xl: var(--spacing-space-750);
+
+		//padding
+		--Padding-xsmall-container: var(--spacing-space-250);
+		--Padding-small-container: var(--spacing-space-400);
+		--Padding-button-lg: var(--spacing-space-300);
+		--Padding-list: var(--spacing-space-250);
+
+		--text-underline-offset: 4px;
+
+		// display
+		--display-xs-font-size: var(--fz-550);
+		--display-xs-line-height: var(--lh-550);
+
+		--display-md-font-size: var(--fz-800);
+		--display-md-line-height: var(--lh-800);
+
+		--display-lg2-font-size: var(--lh-850);
+		--display-lg2-line-height: var(--lh-850);
+
+		--display-lg-font-size: var(--lh-850);
+		--display-lg-line-height: var(--lh-850);
+
+		--display-xl-font-size: 220px;
+		--display-xl-line-height: 152px;
+		--display-xl-letter-spacing: -10px;
+
+		// heading
+		--heading-md-font-size: var(--fz-350);
+		--heading-md-line-height: var(--lh-350);
+
+
+		--heading-lg-font-size: var(--lh-550);
+		--heading-lg-line-height: var(--lh-600);
+
+		--heading-2xl-font-size: var(--fz-800);
+		--heading-2xl-line-height: var(--lh-800);
+
+		--heading-3xl-font-size: var(--fz-1000);
+		--heading-3xl-line-height: 100%;
+
+		//body
+		--body-xs-font-size: var(--fz-150);
+		--body-xs-line-height: var(--lh-150);
+		--body-xs-letter-spacing: var(--ls-normal);
+
+		--body-sm-font-size: var(--fz-250);
+		--body-sm-line-height: var(--lh-250);
+
+		--body-md-font-size: var(--fz-350);
+		--body-md-line-height: var(--lh-350);
+
+		--body-lg-font-size: var(--fz-400);
+		--body-lg-line-height: var(--lh-400);
+
+		--body-xl-font-size: var(--fz-400);
+		--body-xl-line-height: var(--lh-450);
+
+		//label 
+		--label-md-font-size: var(--fz-100);
+		--label-md-line-height: var(--lh-100);
+
+		--label-lg-line-height: var(--lh-100);
+
+		--label-xl-font-size: var(--fz-200);
+		--label-xl-line-height: var(--lh-200);
+	}
+}

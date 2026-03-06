@@ -1,0 +1,59 @@
+
+.carousel__main-wrapper {
+
+	&.carousel__main-wrapper--transition-next {
+		
+		.carousel__image-wrapper-1 {
+
+			left: -100%;
+			transform: scale(0.7);
+			// opacity: 0.3;
+		}
+	
+		.carousel__image-wrapper-2 {
+	
+			left: -50%;
+			transform: scale(0.7);
+			// opacity: 0.3;
+
+			.carousel__image-holder { 
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
+	
+		.carousel__image-wrapper-3 {
+	
+			left: 0%;
+			transform: scale(0.7);
+			// opacity: 0.3;
+
+			.carousel__image-holder { 
+				left: auto;
+				right: -200px;
+				transform: translate(0, -50%);
+			}
+
+		}
+	
+		.carousel__image-wrapper-4 {
+			left: 50%;
+			transform: scale(1);
+			opacity: 1;
+
+			.carousel__image-holder { 
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+			
+		}
+	
+		.carousel__image-wrapper-5 {
+			left: 100%;
+			transform: scale(0.7);
+			// opacity: 0.3;
+		}
+	}
+
+}
+	  

@@ -1,0 +1,120 @@
+.footer {
+	padding: var(--Margins-margin-top-bottom-reg) var(--Margins-margin-left-right);
+
+	.footer__powered-by {
+		display: flex;
+		gap: 8px;
+	}
+
+	.footer__content {
+		display: flex;
+		flex-direction: column;
+		gap: var(--Margins-margin-top-bottom-md);
+	}
+
+	.footer__body {
+		display: flex;
+		flex-direction: column;
+		gap: var(--Margins-margin-top-bottom-md);
+
+		@media screen and (min-width: #{$min-width-lg}) {
+			justify-content: space-between;
+			flex-direction: row;
+		}
+	}
+
+	.footer__inner {
+		display: flex;
+		padding: 64px;
+		flex-direction: column;
+		align-items: center;
+		gap: var(--Margins-margin-top-bottom-md, 80px);
+	}
+
+	.footer__copy {
+		border-top: var(--Strokes-stroke-widht-sm) solid var(--divider);
+		display: flex;
+		padding-top: 16px;
+		justify-content: center;
+		align-items: center;
+		gap: 16px;
+		align-self: stretch;
+
+		@media screen and (min-width: #{$min-width-md}) {
+			text-align: center;
+		}
+
+		a {
+			text-decoration: underline;
+			text-decoration-thickness: 1px;
+			text-underline-offset: 0.1em;
+		}
+	}
+
+	.footer__navs {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		gap: 32px;
+		flex-wrap: wrap;
+
+		@media screen and (min-width: #{$min-width-lg}) {
+			gap: 54px;
+			flex-direction: row;
+			justify-content: flex-end;
+		}
+	}
+
+	.footer__nav {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+
+		a {
+			text-decoration: underline;
+			text-decoration-thickness: 1px;
+			text-underline-offset: 0.4em;
+		}
+	}
+
+	.footer__social {
+		flex: 0 0 100%;
+		
+		display: flex;
+		
+
+		@media screen and (min-width: #{$min-width-lg}) {
+			align-self: flex-end;
+			justify-content: flex-end;
+		}
+
+	}
+
+	.footer__left-side {
+		display: flex;
+		width: 322.148px;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+	}
+
+	.footer__brand-details {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+
+		p {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+
+	}
+}
+
+body.footer-fade-out {
+	footer.footer {
+		transition: opacity 0.5s;
+		opacity: 0;
+	}
+}

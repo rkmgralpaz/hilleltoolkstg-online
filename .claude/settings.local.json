@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(ls:*)",
+      "Bash(npx gulp styles)",
+      "Bash(npx gulp:*)",
+      "Bash(npx sass:*)",
+      "Bash(node --check:*)",
+      "Bash(php -r:*)",
+      "Bash(for:*)",
+      "Bash(do if grep -rq \"10169\" \"$dir/conf/\")",
+      "Bash(then echo \"$dir\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(/dev/null -exec head -c 5000 {} ;)",
+      "Bash(python3:*)",
+      "WebSearch",
+      "WebFetch(domain:developers.google.com)"
+    ]
+  }
+}
