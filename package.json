@@ -11,11 +11,16 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@rollup/stream": "^3.0.1",
     "browser-sync": "^3.0.4",
     "gulp": "^5.0.1",
     "gulp-rename": "^2.1.0",
     "gulp-sass": "^6.0.1",
+    "gulp-terser": "^2.1.0",
     "gulp-uglify": "^3.0.2",
-    "sass": "^1.97.3"
+    "rollup": "^4.59.0",
+    "sass": "^1.97.3",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
   }
 }

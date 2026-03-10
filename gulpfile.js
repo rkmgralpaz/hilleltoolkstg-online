@@ -2,11 +2,25 @@
 
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 const rename = require('gulp-rename');
 const { pipeline } = require('stream');
 const browserSync = require('browser-sync').create();
 const reload = browserSync.reload;
+const rollup = require('@rollup/stream');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
+
+// Plugin: strip query strings from import paths (e.g. './utils.js?v=032' → './utils.js')
+const stripQueryStrings = () => ({
+  name: 'strip-query-strings',
+  resolveId(importee, importer) {
+    if (importee.includes('?')) {
+      return this.resolve(importee.split('?')[0], importer, { skipSelf: true });
+    }
+    return null;
+  }
+});
 
 
 exports.serve = () => {
@@ -40,10 +54,19 @@ const buildStyles = () => gulp.src('./scss/*.scss')
   .pipe(browserSync.stream())
 
 
-const buildScripts = (cb) => pipeline(
-  gulp.src('./js/main.js'),
-  uglify(),
-  rename({ extname: '.min.js' }),
-  gulp.dest('./js/'),
-  cb
-).pipe(browserSync.stream())
+const buildScripts = () => {
+  return rollup({
+    input: './js/main.js',
+    plugins: [stripQueryStrings()],
+    output: {
+      format: 'iife',
+      sourcemap: false
+    }
+  })
+  .pipe(source('main.js'))
+  .pipe(buffer())
+  .pipe(terser())
+  .pipe(rename({ extname: '.min.js' }))
+  .pipe(gulp.dest('./js/'))
+  .pipe(browserSync.stream());
+}

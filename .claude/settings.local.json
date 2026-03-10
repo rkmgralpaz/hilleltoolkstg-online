@@ -16,7 +16,10 @@
       "Bash(/dev/null -exec head -c 5000 {} ;)",
       "Bash(python3:*)",
       "WebSearch",
-      "WebFetch(domain:developers.google.com)"
+      "WebFetch(domain:developers.google.com)",
+      "Bash(lsof:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }

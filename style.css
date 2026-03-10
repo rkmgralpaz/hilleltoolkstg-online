@@ -5490,9 +5490,9 @@ Cambia la cantidad de fotos (3 en lugar de 5) y las posiciones.
   top: calc(6.16% - var(--_spread) * 0.03);
 }
 .block-multi-photo-extended .images__image--3 {
-  width: 8.68%;
+  width: 13.68%;
   aspect-ratio: 150/171;
-  left: calc(16.78% - var(--_spread) * 0.05);
+  left: calc(8.78% - var(--_spread) * 0.05);
   top: calc(20.64% - var(--_spread) * 0.04);
 }
 .block-multi-photo-extended .images__image--4 {
@@ -5511,10 +5511,10 @@ Cambia la cantidad de fotos (3 en lugar de 5) y las posiciones.
   width: 16.55%;
   aspect-ratio: 286/325;
   left: calc(78.41% + var(--_spread) * 0.09);
-  top: calc(61.8% + var(--_spread) * 0.05);
+  top: calc(34.8% + var(--_spread) * 0.05);
 }
 .block-multi-photo-extended .images__image--7 {
-  width: 10.19%;
+  width: 14.19%;
   aspect-ratio: 176/200;
   left: calc(61.69% + var(--_spread) * 0.12);
   top: calc(65.78% + var(--_spread) * 0.07);

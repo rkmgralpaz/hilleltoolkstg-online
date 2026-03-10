@@ -4,7 +4,7 @@ $GLOBALS['wp_post_id'] = get_the_ID();
 
 function num_version()
 {
-    return '1.0.386';
+    return '1.0.387';
 }
 
 //---------------------------------//
